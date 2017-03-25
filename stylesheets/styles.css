@@ -1,8 +1,52 @@
+/* Basic html elements styling */
 body {
-	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif;
+}
+
+strong {
+	font-weight: 600;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Patua One', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: 400;
 }
 
 
+/* Link colour courtesy of http://flatuicolors.com/ */
+a:link, a:visited {
+	display: inline-block;
+	color: #2980b9;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #3498db;
+}
+
+/* Use an ::after pseudo-element for link underlining to avoid having thick lines under large/bold title text
+   This can possibly be used later on for some light hover effect */
+a:hover::after, a:focus::after {
+	display: block;
+	content: '';
+
+	width: 100%;
+	height: 1px;
+	margin: auto;
+	margin-top: -4px;
+
+	background: #3498db;
+}
+/* The change of colour is more noticeable in titles so the added underline effect is not as necessary
+   Also, the underline in the title doesn't look quite right */
+h1 a:hover::after, h1 a:focus::after, h2 a:hover::after, h2 a:focus::after {
+	display: none
+}
+
+
+
+/* Structural */
 main {
 
 	/* For browsers that don't know <main> element (e.g. IE11)
