@@ -2,15 +2,54 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif;
 }
 
-h1 {
-	padding:10vw;
-	text-align:center;
+
+main {
+
+	/* For browsers that don't know <main> element (e.g. IE11)
+	   This renders it as a block element so it doesn't screw up styling */
+	display: block;
+
+	width: 80vw;
+	max-width: 1100px;
+
+	margin: auto;
+	padding: 0 10px;
+
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee
 }
 
-div {
-	word-wrap: normal;
-	text-align: left;
-	position: relative;
-	margin-left: 25%;
-	margin-right: 25%;
+
+h1 {
+	padding: 5vw;
+	padding-bottom: 10vw;
+
+	font-size: 6vh;
+	text-align: center;
+}
+
+
+
+
+
+
+
+/* Min-width break to add more padding on wider screens */
+@media all and (min-width: 720px) {
+	h1 {
+		padding: 10vw;
+	}
+
+	main {
+		padding: 15px;
+	}
+}
+
+
+/* Min-height to adjust the title font size
+   It is set to 6vh on very low-height displays, because otherwise it's just ridiculously small */
+@media all and (min-height: 480px) {
+	h1 {
+		font-size: 4vh;
+	}
 }
