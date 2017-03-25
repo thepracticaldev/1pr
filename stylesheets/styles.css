@@ -1,3 +1,12 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+	padding:10vw;
+	text-align:center;
+}
+
 div {
 	word-wrap: normal;
 	text-align: left;
