@@ -23,12 +23,47 @@ main {
 h1 {
 	padding: 5vw;
 	padding-bottom: 10vw;
-
-	font-size: 6vh;
 	text-align: center;
 }
 
 
+/* Contributor elements */
+#contributors-container {
+	width: 80%;
+	max-width: 1000px;
+
+	margin: auto;
+	padding: 10px;
+
+	text-align: center;
+}
+
+#contributors {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: center;
+
+	font-size: 0.8em;
+	color: #999;
+}
+
+#contributors.error {
+	font-style: italic;
+}
+
+#contributors > a {
+	display: inline-block;
+	margin: 2px 0;
+}
+
+#contributors img {
+	height: 42px;
+	width: 42px;
+	margin-right: 10px;
+
+	border-radius: 50%;
+}
 
 
 
@@ -42,14 +77,5 @@ h1 {
 
 	main {
 		padding: 15px;
-	}
-}
-
-
-/* Min-height to adjust the title font size
-   It is set to 6vh on very low-height displays, because otherwise it's just ridiculously small */
-@media all and (min-height: 480px) {
-	h1 {
-		font-size: 4vh;
 	}
 }
