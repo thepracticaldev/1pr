@@ -100,6 +100,9 @@ h1 {
 	display: inline-block;
 	margin: 2px 0;
 }
+#contributors > a::after {
+	display: none; /* Hide the link underline */
+}
 
 #contributors img {
 	height: 42px;
@@ -107,6 +110,11 @@ h1 {
 	margin-right: 10px;
 
 	border-radius: 50%;
+	transition: all 80ms ease-in-out;
+}
+
+#contributors a:hover img, #contributors a:focus img {
+	transform: scale(1.1);
 }
 
 
