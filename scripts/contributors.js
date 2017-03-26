@@ -13,8 +13,14 @@
 		/* Instead of checking if the request is ready and putting everything below inside the if
 		   I simply return out of the handler whenever the request isn't ready yet.
 		   This makes for cleaner code and less nesting imo. */
-		if(request.readyState !== 4 || request.status !== 200){
+		if(request.readyState !== 4){
 			return;
+
+		}else if(request.status !== 200){
+			console.error(request.responseText);
+			el('contributors').className = 'error';
+			el('contributors').textContent = 'Could not load contributors';
+
 		}
 
 
