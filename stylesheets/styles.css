@@ -2,6 +2,9 @@
 body {
 	font-size: 16px;
 	font-weight: 400;
+
+	/* Use Google Fonts but fallback to system font using this clever line
+	   that targets the standard fonts of most popular operating systems */
 	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu,Cantarell, "Helvetica Neue", sans-serif;
 }
 
@@ -25,8 +28,8 @@ a:hover, a:focus {
 	color: #3498db;
 }
 
-/* Use an ::after pseudo-element for link underlining to avoid having thick lines under large/bold title text
-   This can possibly be used later on for some light hover effect */
+/* Use an ::after pseudo-element for link underlining to avoid having thick lines under large/bold text
+   This can possibly be used later on for a simple hover effect/transition */
 a:hover::after, a:focus::after {
 	display: block;
 	content: '';
@@ -38,10 +41,12 @@ a:hover::after, a:focus::after {
 
 	background: #3498db;
 }
-/* The change of colour is more noticeable in titles so the added underline effect is not as necessary
-   Also, the underline in the title doesn't look quite right */
-h1 a:hover::after, h1 a:focus::after, h2 a:hover::after, h2 a:focus::after {
-	display: none
+/* Adjust the underline spacing slightly for larger text */
+h1 a:hover::after, h1 a:focus::after {
+	margin-top: -6px;
+}
+h2 a:hover::after, h2 a:focus::after {
+	margin-top: -5px;
 }
 
 
