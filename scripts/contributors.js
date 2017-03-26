@@ -20,6 +20,7 @@
 			console.error(request.responseText);
 			el('contributors').className = 'error';
 			el('contributors').textContent = 'Could not load contributors';
+			return;
 
 		}
 
@@ -32,6 +33,7 @@
 			console.error(err);
 			el('contributors').className = 'error';
 			el('contributors').textContent = 'Could not load contributors';
+			return;
 
 		}
 
