@@ -17,10 +17,10 @@ View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.githu
 
 
 ## Coding standards
-When contributing, please follow the coding standards so we have nice looking code that's easy to follow for everyone.
+When contributing, please try to follow the coding standards so we have nice looking code that's easy to follow for everyone.
 
 #### Editorconfig
-Use an editor (or a plugin for your editor) that supports [editorconfig](http://editorconfig.org/).
+Where possible, use an editor (or a plugin for your editor) that supports [editorconfig](http://editorconfig.org/).
 
 The editorconfig file should set your editor to the following settings automatically:
 - UTF-8 charset
@@ -31,13 +31,11 @@ The editorconfig file should set your editor to the following settings automatic
 
 Tab width is not defined in the editorconfig, so each deveveloper can set their editor's tab width to what they're most comfortable with.
 
-Make sure your editor settings don't conflict with the editorconfig settings. Most plugins will have some way of telling you if this happens.
-
 #### Furthermore:
-- Always add comments to your code where necessary. The project should be accessible for devs of all experience and skill levels. Better to have too many comments, than none at all.
-- Whitespace is not the enemy! A couple of empty lines between blocks of code can really improve readability of your code.
+- Add comments to your code where necessary. The project should be accessible for devs of all experience and skill levels. Better to have too many comments, than none at all.
+- Whitespace is not the enemy! A couple of empty lines between blocks of code can really improve readability.
 
 #### For Javascript specifically:
-- Always use semicolons
-- Use `let` and `const` where applicable
-- Use camelCase for variable names
+- Use semicolons (even through they're not strictly necessary). It's good practice!
+- Use `let` and `const` where applicable, to keep the scope of your variables specific. Don't know what scope is or what `let` does? Check out [this article](https://medium.com/@MentallyFriendly/es6-an-idiots-guide-to-let-and-const-70be9691c389).
+- Use `lowerCamelCase` for variable names (not `snake_case`)
