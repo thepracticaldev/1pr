@@ -266,7 +266,8 @@ footer iframe {
 
 @media screen and (max-width: 480px) {
     #banner h1 {		
-	    padding: 30px;
+	    padding-top: 30px;
+	    padding-bottom: 15px;
     }
 	
     footer {
