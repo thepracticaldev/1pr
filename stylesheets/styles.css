@@ -26,14 +26,17 @@ h1, h2, h3, h4 {
 
 /* Link colour courtesy of http://flatuicolors.com/ */
 
-a:link, a:visited {
+a:link,
+a:visited {
     display: inline-block;
     color: #2980b9;
     text-decoration: none;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
     color: #3498db;
+	text-decoration: none;
 }
 
 
@@ -50,18 +53,21 @@ a::after {
     background: white;
 }
 
-a:hover::after, a:focus::after {
+a:hover::after, 
+a:focus::after {
 	background: #3498db;
 }
 
 
 /* Adjust the underline spacing slightly for larger text */
 
-h1 a:hover::after, h1 a:focus::after {
+h1 a:hover::after,
+h1 a:focus::after {
     margin-top: -6px;
 }
 
-h2 a:hover::after, h2 a:focus::after {
+h2 a:hover::after,
+h2 a:focus::after {
     margin-top: -5px;
 }
 
