@@ -136,39 +136,54 @@ h1 {
 
 
 /*Floating nav bar*/
-.nav-ul {
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+nav {
+	/*font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;*/
 	position: fixed;
 	top: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
 	width: 100%;
-	list-style-type: none;
+	height: 54px;
+
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
+
 	background-color: #333;
 }
 
-.nav-li {
-	float: left;
-}
-
-.nav-li a {
+nav a:link, nav a:visited {
 	display: block;
+	padding: 0 18px;
+
+	height: 54px;
+	line-height: 54px;
+
 	color: white;
 	text-align: center;
-	padding: 14px 16px;
 	text-decoration: none;
 }
 
-.nav-li a:hover {
+nav a:hover {
 	background-color: #111;
 }
 
-.nav-li a::after {
+nav a::after {
 	display: none;
 }
 
-#lastpr-container
-{
-	text-align: center;
+nav a.logo svg {
+	width: 24px;
+	height: 32px;
+	margin-top: 11px;
+}
+nav a.logo path {
+	fill: white;
+}
+
+nav .fill {
+	flex-grow: 1;
 }
