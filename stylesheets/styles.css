@@ -39,8 +39,6 @@ a:focus {
 	text-decoration: none;
 }
 
-
-
 /* Use an ::after pseudo-element for link underlining to avoid having thick lines under large/bold text
    This can possibly be used later on for a simple hover effect/transition */
 a::after {
@@ -56,6 +54,11 @@ a::after {
 a:hover::after, 
 a:focus::after {
 	background: #3498db;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+    cursor: auto;
 }
 
 
