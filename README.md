@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/thepracticaldev/1pr.svg?branch=master)](https://travis-ci.org/thepracticaldev/1pr)
-
 # 1pr
 I will be accepting up to one pull request per day on this project.
 
 View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.github.io/1pr/).
+
+[![Build Status](https://travis-ci.org/thepracticaldev/1pr.svg?branch=master)](https://travis-ci.org/thepracticaldev/1pr)
 
 ## Project Journal
 
