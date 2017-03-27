@@ -257,9 +257,6 @@ footer iframe {
 
 /* Min-width break to add more padding on wider screens */
 @media all and (min-width: 720px) {
-	h1 {
-		padding: 10vw;
-	}
 	main {
 		padding: 15px;
 	}
