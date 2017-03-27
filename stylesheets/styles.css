@@ -167,3 +167,8 @@ h1 {
 .nav-li a::after {
 	display: none;
 }
+
+#lastpr-container
+{
+	text-align: center;
+}
