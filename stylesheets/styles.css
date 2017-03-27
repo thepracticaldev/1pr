@@ -1,5 +1,11 @@
-/* Basic html elements styling */
+/* Use border-box sizing instead of the default (content-box)
+   This makes it so the width of an element includes its padding, instead of adding the padding on top of the element.
+   More information on box-sizing here: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+* {
+	box-sizing: border-box;
+}
 
+/* Basic html elements styling */
 body {
 	margin: 0;
 	font-size: 16px;
