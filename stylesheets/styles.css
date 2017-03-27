@@ -228,13 +228,16 @@ footer {
 	background-color: #333;
 	text-align: right;
 }
+
+/* Hide the links while the button script is loading */
 footer a:link, footer a:visited {
-	/* Hide the links while the button script is loading */
 	color: #333;
 }
+
 footer a::after {
 	display: none;
 }
+
 footer iframe {
 	margin: 0 6px;
 }
