@@ -30,13 +30,13 @@ a:link,
 a:visited {
     display: inline-block;
     color: #2980b9;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 a:hover,
 a:focus {
     color: #3498db;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 /* Use an ::after pseudo-element for link underlining to avoid having thick lines under large/bold text
@@ -55,12 +55,6 @@ a:hover::after,
 a:focus::after {
 	background: #3498db;
 }
-
-a:-webkit-any-link {
-    text-decoration: none;
-    cursor: auto;
-}
-
 
 /* Adjust the underline spacing slightly for larger text */
 
