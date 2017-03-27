@@ -207,6 +207,10 @@ nav .fill {
 	flex-grow: 1;
 }
 
+nav .fa-lg {
+    font-size: 1.7em;
+}
+
 
 /* PR listings */
 #pr-container {
