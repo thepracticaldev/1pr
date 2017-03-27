@@ -1,96 +1,93 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+	<head>
 
-	<title>One PR A Day</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>One PR A Day</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CPatua+One">
-	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+	</head>
 
-</head>
+	<body>
 
-<body>
+		<nav>
+			<!-- SVG code copied from Github -->
+			<a class="logo" target="_blank" href="https://thepracticaldev.github.io/1pr/">
+				<svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+			</a>
+			<a target="_blank" href="https://github.com/thepracticaldev/1pr">
+				<i class="fa fa-github fa-lg" aria-hidden="true"></i>
+			</a>
+			<a target="_blank" href="https://twitter.com/ThePracticalDev">
+				<i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+			</a>
+			<a target="_blank" href="https://dev.to/t/1pr">
+				dev.to
+			</a>
+				
+			<div class="fill"></div>
 
-	<nav>
-		<!-- SVG code copied from Github -->
-		<a class="logo" target="_blank" href="https://thepracticaldev.github.io/1pr/">
-			<svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
-		</a>
+			<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a>
+		</nav>
+		
+		<br><br>
+		
+		<div id="banner">
 
-		<a target="_blank" href="https://github.com/thepracticaldev/1pr">GitHub</a>
-		<a target="_blank" href="https://dev.to/ben/as-one-does-at-three-oclock-in-the-morning-i-started-a-funky-side-project">dev.to</a>
-		<a target="_blank" href="https://twitter.com/ThePracticalDev">Twitter</a>
+			<h1>I will be accepting up to one pull&nbsp;request per day on <a href="https://github.com/thepracticaldev/1pr">this&nbsp;project</a>.</h1>
+			
+			<div id="pr-container">
+				<h4>Last PR</h4>
+				<p id="pr-last"></p>
+			</div>
+			
+			<a target="_blank" href="https://github.com/thepracticaldev/1pr/pulls">
+				<img src="https://img.shields.io/github/issues-pr/thepracticaldev/1pr.svg?colorB=brightgreen" height="34" />
+			</a>
+		
+		</div>
 
-		<div class="fill"></div>
+		<main>
 
-		<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a>
-	</nav>
+			<p>Interested in contributing, but not sure where to start?</p>
+			<ul>
+				<li>For a primer on git: <a target="_blank" href="http://www.theodinproject.com/courses/web-development-101/lessons/introduction-to-git">click here</a></li>
+				<li>Find some inspiration for cool ideas on what you can add to the project <a target="_blank" href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s">from this medium post</a></li>
+			</ul>
 
-	<br><br>
+		</main>
 
-	<!-- Non-breaking spaces between "pull request" and "this project" so automatic line breaks don't split those up
-		 (improves legibility, especially on small devices) -->
-	<h1>I will be accepting up to one pull&nbsp;request per day on <a href="https://github.com/thepracticaldev/1pr">this&nbsp;project</a>.</h1>
+		<div id="contributors-container">
 
-<!-- <center>		<a target="_blank" href="https://github.com/thepracticaldev/1pr/pulls"><img src="https://img.shields.io/github/issues-pr/thepracticaldev/1pr.svg"></a>
-		<a target="_blank" href="https://github.com/thepracticaldev/1pr/network"><img src="https://img.shields.io/github/forks/thepracticaldev/1pr.svg"></a>
-		<a target="_blank" href="https://github.com/thepracticaldev/1pr/stargazers"><img src="https://img.shields.io/github/stars/thepracticaldev/1pr.svg"></a>
-</center> -->
+			<h4>A project by</h4>
 
+			<!-- This will become the list of contributors -->
+			<div id="contributors"></div>
 
-<br>
-
-	<main>
-
-		<p>Interested in contributing, but not sure where to start?</p>
-		<ul>
-			<li>For a primer on git: <a target="_blank" href="http://www.theodinproject.com/courses/web-development-101/lessons/introduction-to-git">click here</a></li>
-			<li>Find some inspiration for cool ideas on what you can add to the project <a target="_blank" href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s">from this medium post</a></li>
-		</ul>
-
-	</main>
-
-
-	<div id="pr-container">
-
-		<h4>Last PR</h4>
-		<p id="pr-last"></p>
-
-	</div>
-
-
-	<div id="contributors-container">
-
-		<h4>A project by</h4>
-
-		<!-- This will become the list of contributors -->
-		<div id="contributors"></div>
-
-	</div>
+		</div>
 
 
-	<footer>
+		<footer>
 
-		<a class="github-button" href="https://github.com/thepracticaldev/1pr" data-icon="octicon-star" data-style="mega" data-count-href="/thepracticaldev/1pr/stargazers" data-count-api="/repos/thepracticaldev/1pr#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thepracticaldev/1pr on GitHub">Star</a>
+			<a class="github-button" href="https://github.com/thepracticaldev/1pr" data-icon="octicon-star" data-style="mega" data-count-href="/thepracticaldev/1pr/stargazers" data-count-api="/repos/thepracticaldev/1pr#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thepracticaldev/1pr on GitHub">Star</a>
 
-		<a class="github-button" href="https://github.com/thepracticaldev/1pr/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/thepracticaldev/1pr#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue thepracticaldev/1pr on GitHub">Issue</a>
+			<a class="github-button" href="https://github.com/thepracticaldev/1pr/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/thepracticaldev/1pr#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue thepracticaldev/1pr on GitHub">Issue</a>
 
-		<a class="github-button" href="https://github.com/thepracticaldev/1pr/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/thepracticaldev/1pr/network" data-count-api="/repos/thepracticaldev/1pr#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork thepracticaldev/1pr on GitHub">Fork</a>
+			<a class="github-button" href="https://github.com/thepracticaldev/1pr/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/thepracticaldev/1pr/network" data-count-api="/repos/thepracticaldev/1pr#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork thepracticaldev/1pr on GitHub">Fork</a>
 
-	</footer>
+		</footer>
 
-	<!-- Load the shared API script -->
-	<script src="scripts/api.js"></script>
+		<!-- Load the shared API script -->
+		<script src="scripts/api.js"></script>
 
-	<!-- Asynchronously load the other scripts -->
-	<script src="scripts/contributors.js" async></script>
-	<script src="scripts/pr.js" async></script>
+		<!-- Asynchronously load the other scripts -->
+		<script src="scripts/contributors.js" async></script>
+		<script src="scripts/pr.js" async></script>
 
-	<!-- GH buttons script -->
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
+		<!-- GH buttons script -->
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
 
-</body>
+	</body>
 
 </html>
