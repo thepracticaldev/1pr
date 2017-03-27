@@ -176,9 +176,9 @@ nav a::after {
 }
 
 nav a.logo svg {
-	width: 24px;
-	height: 32px;
-	margin-top: 11px;
+	width: 21px;
+	height: 28px;
+	margin-top: 13px;
 }
 nav a.logo path {
 	fill: white;
