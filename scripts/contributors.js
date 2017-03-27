@@ -2,46 +2,20 @@
 (function loadContributors() {
 
 	// Helper function; shorthand for document.getElementById (because that gets pretty annoying if you have to write it a bunch)
-	function el(id){ return document.getElementById(id); }
+	let el = function(id) { return document.getElementById(id); }
 
-	// Create HTTP request
-	let request = new XMLHttpRequest();
+	window.api('https://api.github.com/repos/thepracticaldev/1pr/contributors', function(err, contributors){
 
-	// Attach a handler for when the request is completed
-	request.onreadystatechange = function onStateChange() {
-
-		// Initialise variables
-		let contributors = [];
-
-		/* Instead of checking if the request is ready and putting everything below inside the if
-		   I simply return out of the handler whenever the request isn't ready yet.
-		   This makes for cleaner code and less nesting imo. */
-		if(request.readyState !== 4){
-			return;
-
-		}else if(request.status !== 200){
-			console.error(request.responseText);
-			el('contributors').className = 'error';
-			el('contributors').textContent = 'Could not load contributors';
-			return;
-
-		}
-
-
-		// Attempt to parse the JSON response data (in a try/catch in case the JSON is malformed)
-		try {
-			contributors = JSON.parse(request.responseText);
-
-		} catch (err) {
+		// Log and display any errors
+		if(err !== null){
 			console.error(err);
 			el('contributors').className = 'error';
 			el('contributors').textContent = 'Could not load contributors';
 			return;
-
 		}
 
 
-		// Append each contributor to the footer
+		// Append each contributor to the contributors element
 		for(let i = 0; i < contributors.length; i++){
 
 			// Link to contributor's profile
@@ -59,13 +33,9 @@
 			el('contributors').appendChild(contributor);
 
 		}
-	}
 
-	// Send the request
-	request.open('GET', 'https://api.github.com/repos/thepracticaldev/1pr/contributors', true);
-	request.send(null);
+		el('contributors-container').style.display = 'block';
 
-	// If you hit the API rate limit, add the following before sending the request (add in your own username and api token)
-	// request.setRequestHeader('Authorization', 'Basic ' + btoa('username:personal api token'));
+	});
 
 })();

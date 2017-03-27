@@ -44,7 +44,14 @@
 
 	</main>
 
-	<div id="lastpr-container"></div>
+
+	<div id="pr-container">
+
+		<h4>Last PR</h4>
+		<p id="pr-last"></p>
+
+	</div>
+
 
 	<div id="contributors-container">
 
@@ -55,8 +62,12 @@
 
 	</div>
 
+	<!-- Load the shared API script -->
+	<script src="scripts/api.js"></script>
+
+	<!-- Asynchronously load the other scripts -->
 	<script src="scripts/contributors.js" async></script>
-	<script src="scripts/lastpr.js" async></script>
+	<script src="scripts/pr.js" async></script>
 
 </body>
 

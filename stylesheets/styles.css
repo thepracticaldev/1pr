@@ -13,7 +13,7 @@ strong {
 	font-weight: 600;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, label {
 	font-family: 'Patua One', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-weight: 400;
 }
@@ -81,10 +81,14 @@ h1 {
 
 /* Contributor elements */
 #contributors-container {
+	display: none;
+
 	width: 80%;
 	max-width: 1000px;
+
 	margin: auto;
 	padding: 10px;
+
 	text-align: center;
 }
 
@@ -93,6 +97,7 @@ h1 {
 	flex-wrap: wrap;
 	align-items: stretch;
 	justify-content: center;
+
 	font-size: 0.8em;
 	color: #999;
 }
@@ -176,6 +181,22 @@ nav a.logo path {
 
 nav .fill {
 	flex-grow: 1;
+}
+
+
+/* PR listings */
+#pr-container {
+	display: none;
+	text-align: center;
+}
+
+#pr-container h4 {
+	margin-bottom: 0
+}
+
+#pr-container p {
+	margin: 5px;
+	font-size: 0.9em;
 }
 
 

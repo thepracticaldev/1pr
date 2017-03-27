@@ -39,5 +39,5 @@ Make sure your editor settings don't conflict with the editorconfig settings. Mo
 
 #### For Javascript specifically:
 - Always use semicolons
-- Declare your variables first, in the scope where they're used
 - Use `let` and `const` where applicable
+- Use camelCase for variable names
