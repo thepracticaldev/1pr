@@ -35,14 +35,13 @@ label {
 	font-weight: 400;
 }
 
-
-/* Link colour courtesy of http://flatuicolors.com/ */
+a,
 a:link, 
 a:visited {
 
 	display: inline-block;
 	color: #2980b9;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 a:hover, a:focus {
@@ -256,6 +255,13 @@ footer a:visited {
 	color: #333;
 }
 
+
+#lastpr-container
+{
+	text-align: center;
+}
+
+
 footer a::after {
 	display: none;
 }
@@ -285,9 +291,4 @@ footer iframe {
 		padding-top: 80px;
 		margin-bottom: -100px;
 	}
-}
-
-#lastpr-container
-{
-	text-align: center;
 }
