@@ -190,6 +190,8 @@ nav .fill {
 }
 
 
+
+
 /* PR listings */
 #pr-container {
 	display: none;
@@ -207,6 +209,40 @@ nav .fill {
 
 
 
+/* Floating footer */
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	width: 100%;
+	height: 48px;
+
+	margin: 0px;
+	padding: 0 4px;
+
+	background-color: #333;
+	text-align: right;
+}
+footer a:link, footer a:visited {
+	/* Hide the links while the button script is loading */
+	color: #333;
+}
+footer a::after {
+	display: none;
+}
+footer iframe {
+	margin: 0 8px;
+}
+
+
+
+
+
 /* Min-width break to add more padding on wider screens */
 @media all and (min-width: 720px) {
 	h1 {
@@ -220,25 +256,4 @@ nav .fill {
 #lastpr-container
 {
 	text-align: center;
-}
-
-/*Footer*/
-
-
-footer {
-	  height: 30px;
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    list-style-type: none;
-    margin: 0px;
-		padding: 10px;
-    overflow: hidden;
-    background-color: #333;
-}
-
-.social-buttons {
-		text-align: right;
-		padding-right: 25px;
 }
