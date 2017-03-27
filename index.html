@@ -1,53 +1,79 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+	<head>
 
-	<title>One PR A Day</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>One PR A Day</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One">
-	<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One">
+		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<nav class="nav-ul">
-		<li class="nav-li"><a target="_blank" href="https://thepracticaldev.github.io/1pr/"><img height="22px" src="assets/1pr.png"></a></li>
-		<li class="nav-li"><a target="_blank" href="https://github.com/thepracticaldev/1pr">GitHub</a></li>
-		<li class="nav-li"><a target="_blank" href="https://dev.to/ben/as-one-does-at-three-oclock-in-the-morning-i-started-a-funky-side-project">dev.to</a></li>
-		<li class="nav-li"><a target="_blank" href="https://twitter.com/ThePracticalDev">Twitter</a></li>
-		<li class="nav-li" style="float:right"><a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a></li>
-	</nav>
+		<nav class="nav-ul">
+			<li class="nav-li">
+				<a target="_blank" href="https://thepracticaldev.github.io/1pr/">
+					<img height="22px" src="assets/1pr.png">
+				</a>
+			</li>
+			<li class="nav-li">
+				<a target="_blank" href="https://github.com/thepracticaldev/1pr">
+					GitHub
+				</a>
+			</li>
+			<li class="nav-li">
+				<a target="_blank" href="https://dev.to/ben/as-one-does-at-three-oclock-in-the-morning-i-started-a-funky-side-project">
+					dev.to
+				</a>
+			</li>
+			<li class="nav-li">
+				<a target="_blank" href="https://twitter.com/ThePracticalDev">
+					Twitter
+				</a>
+			</li>
+			<li class="nav-li" style="float:right">
+				<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">
+					Edit
+				</a>
+			</li>
+		</nav>
 
-	<br><br>
+		<br><br>
+		
+		<div id="banner">
 
-	<!-- Non-breaking spaces between "pull request" and "this project" so automatic line breaks don't split those up
-			(improves legibility, especially on small devices) -->
-	<h1>I will be accepting up to one pull&nbsp;request per day on <a href="https://github.com/thepracticaldev/1pr">this&nbsp;project</a>.</h1>
+			<h1>I will be accepting up to one pull&nbsp;request per day on <a href="https://github.com/thepracticaldev/1pr">this&nbsp;project</a>.</h1>
+		
+		</div>
+		
+			<main>
+			
+			<p>Interested in contributing, but not sure where to start?</p>
+			
+			<ul>
+				<li>For a primer on git: <a href="http://www.theodinproject.com/courses/web-development-101/lessons/introduction-to-git">click here</a></li>
+				<li>Find some inspiration for cool ideas on what you can add to the project <a href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s">from this medium post</a></li>
+			</ul>
 
-	<main>
-
-		<p>Interested in contributing, but not sure where to start?</p>
-		<ul>
-			<li>For a primer on git: <a href="http://www.theodinproject.com/courses/web-development-101/lessons/introduction-to-git">click here</a></li>
-			<li>Find some inspiration for cool ideas on what you can add to the project <a href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s">from this medium post</a></li>
-		</ul>
-
-	</main>
+		</main>
 
 
-	<div id="contributors-container">
+		<div id="contributors-container">
 
-		<h4>A project by</h4>
+			<h4>A project by</h4>
+			
+			<!-- This will become the list of contributors -->
+			<div id="contributors"></div>
 
-		<!-- This will become the list of contributors -->
-		<div id="contributors"></div>
+		</div>
 
-	</div>
-
-	<script src="scripts/contributors.js" async></script>
-</body>
+		<footer>
+			<script src="scripts/contributors.js" async></script>
+		</footer>
+		
+	</body>
 
 </html>
