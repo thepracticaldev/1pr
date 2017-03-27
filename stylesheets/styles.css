@@ -127,7 +127,6 @@ h1 {
 
 /*Floating nav bar*/
 nav {
-	/*font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;*/
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -142,6 +141,7 @@ nav {
 	margin: 0;
 	padding: 0;
 
+	color: white;
 	background-color: #333;
 }
 
