@@ -8,6 +8,8 @@
 /* Basic html elements styling */
 body {
 	margin: 0;
+	padding-bottom: 60px;
+
 	font-size: 16px;
 	font-weight: 400;
 	/* Use Google Fonts but fallback to system font using this clever line
