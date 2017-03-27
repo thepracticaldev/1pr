@@ -39,6 +39,7 @@ label {
 /* Link colour courtesy of http://flatuicolors.com/ */
 a:link, 
 a:visited {
+
 	display: inline-block;
 	color: #2980b9;
 	text-decoration: none;
@@ -69,6 +70,7 @@ a:focus::after {
 
 
 /* Adjust the underline spacing slightly for larger text */
+
 h1 a:hover::after,
 h1 a:focus::after {
 	margin-top: -6px;
@@ -172,6 +174,7 @@ nav {
 
 nav a:link,
 nav a:visited {
+
 	display: block;
 	padding: 0 18px;
 
@@ -243,6 +246,7 @@ footer {
 }
 
 /* Hide the links while the button script is loading */
+
 footer a:link,
 footer a:visited {
 	color: #333;
