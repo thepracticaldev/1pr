@@ -10,6 +10,9 @@
 	// Attach a handler for when the request is completed
 	request.onreadystatechange = function onStateChange() {
 
+		// Initialise variables
+		let contributors = [];
+
 		/* Instead of checking if the request is ready and putting everything below inside the if
 		   I simply return out of the handler whenever the request isn't ready yet.
 		   This makes for cleaner code and less nesting imo. */

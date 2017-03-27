@@ -1,0 +1,18 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+root = true
+
+# One config to rule them all
+[*]
+
+# Always use UTF-8
+charset = utf-8
+
+# Unix style line breaks and end files with a newline
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Tab indentation without specified width
+# This allows each dev to set the tab width in their IDE to whatever they like best
+indent_style = tab
