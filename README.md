@@ -1,18 +1,20 @@
 # 1pr
 I will be accepting up to one pull request per day on this project.
 
+View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.github.io/1pr/).
+
 ## Project Journal
 
 - [As one does at three o'clock in the morning, I started a funky side project.](https://dev.to/ben/as-one-does-at-three-oclock-in-the-morning-i-started-a-funky-side-project)
 - [1pr Day 3: Added styles and a project contributor list](https://dev.to/ben/1pr-day-3-added-styles-and-a-project-contributor-list)
 
-View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.github.io/1pr/).
 
 ## How to contribute
 - Fork the repository
 - Add something awesome
 - Create a pull request
 - Hope you get picked
+
 
 ## Coding standards
 When contributing, please follow the coding standards so we have nice looking code that's easy to follow for everyone.
