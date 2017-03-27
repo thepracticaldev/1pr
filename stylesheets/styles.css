@@ -264,7 +264,11 @@ footer iframe {
 	margin: 0 6px;
 }
 
-
+@media screen and (max-width: 480px) {
+    #banner h1 {		
+	    padding: 15px;
+    }
+}
 
 /* Min-width break to add more padding on wider screens */
 @media all and (min-width: 720px) {
