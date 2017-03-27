@@ -26,14 +26,20 @@ strong {
 	font-weight: 600;
 }
 
-h1, h2, h3, h4, label {
+h1, 
+h2, 
+h3, 
+h4, 
+label {
 	font-family: 'Patua One', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-weight: 400;
 }
 
 
 /* Link colour courtesy of http://flatuicolors.com/ */
-a:link, a:visited {
+a:link, 
+a:visited {
+
 	display: inline-block;
 	color: #2980b9;
 	text-decoration: none;
@@ -57,17 +63,21 @@ a::after {
 	background: white;
 }
 
-a:hover::after, a:focus::after {
+a:hover::after,
+a:focus::after {
 	background: #3498db;
 }
 
 
 /* Adjust the underline spacing slightly for larger text */
-h1 a:hover::after, h1 a:focus::after {
+
+h1 a:hover::after,
+h1 a:focus::after {
 	margin-top: -6px;
 }
 
-h2 a:hover::after, h2 a:focus::after {
+h2 a:hover::after, 
+h2 a:focus::after {
 	margin-top: -5px;
 }
 
@@ -162,7 +172,9 @@ nav {
 	background-color: #333;
 }
 
-nav a:link, nav a:visited {
+nav a:link,
+nav a:visited {
+
 	display: block;
 	padding: 0 18px;
 
@@ -194,8 +206,6 @@ nav a.logo path {
 nav .fill {
 	flex-grow: 1;
 }
-
-
 
 
 /* PR listings */
@@ -236,7 +246,9 @@ footer {
 }
 
 /* Hide the links while the button script is loading */
-footer a:link, footer a:visited {
+
+footer a:link,
+footer a:visited {
 	color: #333;
 }
 
@@ -247,8 +259,6 @@ footer a::after {
 footer iframe {
 	margin: 0 6px;
 }
-
-
 
 
 
