@@ -27,7 +27,6 @@ h1, h2, h3, h4 {
 /* Link colour courtesy of http://flatuicolors.com/ */
 
 a,
-a:-webkit-any-link,
 a:link,
 a:visited {
     display: inline-block;
