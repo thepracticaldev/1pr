@@ -1,3 +1,7 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');	
+
 /* Basic html elements styling */
 
 body {
@@ -75,9 +79,8 @@ main {
     border-bottom: 1px solid #e6e6e6;
 }
 
-h1 {
-    padding: 5vw;
-    padding-bottom: 10vw;
+#banner {
+    padding: 10vw;
     text-align: center;
 }
 
@@ -131,9 +134,6 @@ h1 {
 /* Min-width break to add more padding on wider screens */
 
 @media all and (min-width: 720px) {
-    h1 {
-        padding: 10vw;
-    }
     main {
         padding: 15px;
     }
