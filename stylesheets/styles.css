@@ -146,35 +146,126 @@ main {
 
 
 /*Floating nav bar*/
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
 
-.nav-ul {
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	width: 100%;
+	height: 54px;
+
+	margin: 0;
+	padding: 0;
+
+	color: white;
+	background-color: #333;
 }
 
-.nav-li {
-    float: left;
+nav a:link, nav a:visited {
+	display: block;
+	padding: 0 18px;
+
+	height: 54px;
+	line-height: 54px;
+
+	color: white;
+	text-align: center;
+	text-decoration: none;
 }
 
-.nav-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+nav a:hover {
+	background-color: #111;
 }
 
-.nav-li a:hover {
-    background-color: #111;
-}
-
-.nav-li a::after {
+nav a::after {
 	display: none;
+}
+
+nav a.logo svg {
+	width: 21px;
+	height: 28px;
+	margin-top: 13px;
+}
+nav a.logo path {
+	fill: white;
+}
+
+nav .fill {
+	flex-grow: 1;
+}
+
+
+
+
+/* PR listings */
+#pr-container {
+	display: none;
+	text-align: center;
+}
+
+#pr-container h4 {
+	margin-bottom: 0
+}
+
+#pr-container p {
+	margin: 5px;
+	font-size: 0.9em;
+}
+
+
+
+/* Floating footer */
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	width: 100%;
+	height: 48px;
+
+	margin: 0px;
+	padding: 0 4px;
+
+	background-color: #333;
+	text-align: right;
+}
+
+/* Hide the links while the button script is loading */
+footer a:link, footer a:visited {
+	color: #333;
+}
+
+footer a::after {
+	display: none;
+}
+
+footer iframe {
+	margin: 0 6px;
+}
+
+
+
+
+
+/* Min-width break to add more padding on wider screens */
+@media all and (min-width: 720px) {
+	h1 {
+		padding: 10vw;
+	}
+	main {
+		padding: 15px;
+	}
+}
+
+#lastpr-container
+{
+	text-align: center;
 }
