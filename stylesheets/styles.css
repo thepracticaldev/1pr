@@ -124,16 +124,6 @@ h1 {
 }
 
 
-/* Min-width break to add more padding on wider screens */
-@media all and (min-width: 720px) {
-	h1 {
-		padding: 10vw;
-	}
-	main {
-		padding: 15px;
-	}
-}
-
 
 /*Floating nav bar*/
 nav {
@@ -186,4 +176,16 @@ nav a.logo path {
 
 nav .fill {
 	flex-grow: 1;
+}
+
+
+
+/* Min-width break to add more padding on wider screens */
+@media all and (min-width: 720px) {
+	h1 {
+		padding: 10vw;
+	}
+	main {
+		padding: 15px;
+	}
 }
