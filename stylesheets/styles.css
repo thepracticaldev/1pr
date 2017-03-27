@@ -177,3 +177,7 @@ main {
 .nav-li a::after {
 	display: none;
 }
+
+#pr-shield {
+    text-decoration: none;
+}
