@@ -173,3 +173,24 @@ h1 {
 .nav-li a::after {
 	display: none;
 }
+
+/*Footer*/
+
+
+footer {
+	  height: 30px;
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0px;
+		padding: 10px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.social-buttons {
+		text-align: right;
+		padding-right: 25px;
+}
