@@ -298,6 +298,8 @@ footer iframe {
 pr-badge a, 
 pr-badge a:visited, 
 pr-badge a:hover, 
-pr-badge a:active {
+pr-badge a:active
+a:hover::after,
+a:focus::after  {
     text-decoration: none;
 }
