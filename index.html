@@ -65,6 +65,11 @@
 
 		</div>
 
+		<div id="firebaseTestArea">
+			<span id="firebaseUser"></span>
+			<button id="firebaseTestIncrement">Increment</button>
+			<span id="firebaseTestOutput"></span>
+		</div>
 
 		<footer>
 
@@ -78,8 +83,23 @@
 
 		<!-- Load the shared API script -->
 		<script src="scripts/api.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+		<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyBTsOTB3XvmDdU6RcO1DlOOV-govpkDs4E",
+			authDomain: "onepr-453d8.firebaseapp.com",
+			databaseURL: "https://onepr-453d8.firebaseio.com",
+			storageBucket: "onepr-453d8.appspot.com",
+			messagingSenderId: "240320654850"
+		};
+		firebase.initializeApp(config);
+		</script>
+
 
 		<!-- Asynchronously load the other scripts -->
+		<script src="scripts/firebase.js" async></script>
 		<script src="scripts/contributors.js" async></script>
 		<script src="scripts/pr.js" async></script>
 
