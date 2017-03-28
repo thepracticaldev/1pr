@@ -1,3 +1,8 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');	
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
 /* Use border-box sizing instead of the default (content-box)
    This makes it so the width of an element includes its padding, instead of adding the padding on top of the element.
    More information on box-sizing here: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
@@ -21,21 +26,28 @@ strong {
 	font-weight: 600;
 }
 
-h1, h2, h3, h4, label {
+h1, 
+h2, 
+h3, 
+h4, 
+label {
 	font-family: 'Patua One', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-weight: 400;
 }
 
+a,
+a:link, 
+a:visited {
 
-/* Link colour courtesy of http://flatuicolors.com/ */
-a:link, a:visited {
 	display: inline-block;
 	color: #2980b9;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
 	color: #3498db;
+	text-decoration: none !important;
 }
 
 
@@ -52,17 +64,15 @@ a::after {
 	background: white;
 }
 
-a:hover::after, a:focus::after {
-	background: #3498db;
-}
-
-
 /* Adjust the underline spacing slightly for larger text */
-h1 a:hover::after, h1 a:focus::after {
+
+h1 a:hover::after,
+h1 a:focus::after {
 	margin-top: -6px;
 }
 
-h2 a:hover::after, h2 a:focus::after {
+h2 a:hover::after, 
+h2 a:focus::after {
 	margin-top: -5px;
 }
 
@@ -80,9 +90,8 @@ main {
 	border-bottom: 1px solid #e6e6e6;
 }
 
-h1 {
-	padding: 5vw;
-	padding-bottom: 10vw;
+#banner {
+	padding: 10vw;
 	text-align: center;
 }
 
@@ -158,7 +167,9 @@ nav {
 	background-color: #333;
 }
 
-nav a:link, nav a:visited {
+nav a:link,
+nav a:visited {
+
 	display: block;
 	padding: 0 18px;
 
@@ -191,7 +202,9 @@ nav .fill {
 	flex-grow: 1;
 }
 
-
+nav .fa-lg {
+    font-size: 1.7em;
+}
 
 
 /* PR listings */
@@ -232,9 +245,18 @@ footer {
 }
 
 /* Hide the links while the button script is loading */
-footer a:link, footer a:visited {
+
+footer a:link,
+footer a:visited {
 	color: #333;
 }
+
+
+#lastpr-container
+{
+	text-align: center;
+}
+
 
 footer a::after {
 	display: none;
@@ -244,21 +266,34 @@ footer iframe {
 	margin: 0 6px;
 }
 
-
-
-
-
-/* Min-width break to add more padding on wider screens */
-@media all and (min-width: 720px) {
-	h1 {
-		padding: 10vw;
-	}
-	main {
-		padding: 15px;
+@media screen and (max-width: 480px) {
+    #banner h1 {		
+	    padding-top: 30px;
+	    padding-bottom: 15px;
+    }
+	
+    footer {
+	    display: none;
 	}
 }
 
-#lastpr-container
-{
-	text-align: center;
+/* Min-width break to add more padding on wider screens */
+@media all and (min-width: 720px) {
+	main {
+		padding: 50px;
+	}
+	
+	#pr-container {
+		padding-top: 80px;
+		margin-bottom: -100px;
+	}
+}
+
+pr-badge a, 
+pr-badge a:visited, 
+pr-badge a:hover, 
+pr-badge a:active
+pr-badge a:hover::after,
+pr-badge a:focus::after  {
+    text-decoration: none;
 }
