@@ -64,12 +64,6 @@ a::after {
 	background: white;
 }
 
-a:hover::after,
-a:focus::after {
-	background: #3498db;
-}
-
-
 /* Adjust the underline spacing slightly for larger text */
 
 h1 a:hover::after,
@@ -302,5 +296,4 @@ pr-badge a:active
 pr-badge a:hover::after,
 pr-badge a:focus::after  {
     text-decoration: none;
-    background: none;
 }
