@@ -1,6 +1,6 @@
 /* Fonts */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');	
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 /* Use border-box sizing instead of the default (content-box)
@@ -26,17 +26,17 @@ strong {
 	font-weight: 600;
 }
 
-h1, 
-h2, 
-h3, 
-h4, 
+h1,
+h2,
+h3,
+h4,
 label {
 	font-family: 'Patua One', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-weight: 400;
 }
 
 a,
-a:link, 
+a:link,
 a:visited {
 
 	display: inline-block;
@@ -71,7 +71,7 @@ h1 a:focus::after {
 	margin-top: -6px;
 }
 
-h2 a:hover::after, 
+h2 a:hover::after,
 h2 a:focus::after {
 	margin-top: -5px;
 }
@@ -231,7 +231,7 @@ footer {
 	left: 0;
 
 	display: flex;
-	justify-content: flex-end;
+	/*justify-content: flex-end;*/
 	align-items: center;
 
 	width: 100%;
@@ -267,11 +267,11 @@ footer iframe {
 }
 
 @media screen and (max-width: 480px) {
-    #banner h1 {		
+    #banner h1 {
 	    padding-top: 30px;
 	    padding-bottom: 15px;
     }
-	
+
     footer {
 	    display: none;
 	}
@@ -282,16 +282,16 @@ footer iframe {
 	main {
 		padding: 50px;
 	}
-	
+
 	#pr-container {
 		padding-top: 80px;
 		margin-bottom: -100px;
 	}
 }
 
-pr-badge a, 
-pr-badge a:visited, 
-pr-badge a:hover, 
+pr-badge a,
+pr-badge a:visited,
+pr-badge a:hover,
 pr-badge a:active
 pr-badge a:hover::after,
 pr-badge a:focus::after  {
