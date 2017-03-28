@@ -1,34 +1,53 @@
-/* Basic html elements styling */
+/* Fonts */
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');	
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+/* Use border-box sizing instead of the default (content-box)
+   This makes it so the width of an element includes its padding, instead of adding the padding on top of the element.
+   More information on box-sizing here: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+* {
+	box-sizing: border-box;
+}
+
+/* Basic html elements styling */
 body {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 400;
-    /* Use Google Fonts but fallback to system font using this clever line
+	margin: 0;
+	padding-bottom: 60px;
+
+	font-size: 16px;
+	font-weight: 400;
+	/* Use Google Fonts but fallback to system font using this clever line
 	   that targets the standard fonts of most popular operating systems */
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 strong {
-    font-weight: 600;
+	font-weight: 600;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Patua One', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-weight: 400;
+h1, 
+h2, 
+h3, 
+h4, 
+label {
+	font-family: 'Patua One', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-weight: 400;
 }
 
+a,
+a:link, 
+a:visited {
 
-/* Link colour courtesy of http://flatuicolors.com/ */
-
-a:link, a:visited {
-    display: inline-block;
-    color: #2980b9;
-    text-decoration: none;
+	display: inline-block;
+	color: #2980b9;
+	text-decoration: none !important;
 }
 
-a:hover, a:focus {
-    color: #3498db;
+a:hover,
+a:focus {
+	color: #3498db;
+	text-decoration: none !important;
 }
 
 
@@ -36,161 +55,245 @@ a:hover, a:focus {
 /* Use an ::after pseudo-element for link underlining to avoid having thick lines under large/bold text
    This can possibly be used later on for a simple hover effect/transition */
 a::after {
-    display: block;
-    content: '';
-    width: 100%;
-    height: 1px;
-    margin: auto;
-    margin-top: -4px;
-    background: white;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 1px;
+	margin: auto;
+	margin-top: -4px;
+	background: white;
 }
-
-a:hover::after, a:focus::after {
-	background: #3498db;
-}
-
 
 /* Adjust the underline spacing slightly for larger text */
 
-h1 a:hover::after, h1 a:focus::after {
-    margin-top: -6px;
+h1 a:hover::after,
+h1 a:focus::after {
+	margin-top: -6px;
 }
 
-h2 a:hover::after, h2 a:focus::after {
-    margin-top: -5px;
+h2 a:hover::after, 
+h2 a:focus::after {
+	margin-top: -5px;
 }
 
 
 /* Structural */
-
 main {
-    /* For browsers that don't know <main> element (e.g. IE11)
+	/* For browsers that don't know <main> element (e.g. IE11)
 	   This renders it as a block element so it doesn't screw up styling */
-    display: block;
-    width: 80vw;
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 10px;
-    border-top: 1px solid #e6e6e6;
-    border-bottom: 1px solid #e6e6e6;
+	display: block;
+	width: 80vw;
+	max-width: 1100px;
+	margin: auto;
+	padding: 0 10px;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
 }
 
-h1 {
-    padding: 5vw;
-    padding-bottom: 10vw;
-    text-align: center;
+#banner {
+	padding: 10vw;
+	text-align: center;
 }
 
 
 /* Contributor elements */
-
 #contributors-container {
-    width: 80%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 10px;
-    text-align: center;
+	display: none;
+
+	width: 80%;
+	max-width: 1000px;
+
+	margin: auto;
+	padding: 10px;
+
+	text-align: center;
 }
 
 #contributors {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
-    font-size: 0.8em;
-    color: #999;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: center;
+
+	font-size: 0.8em;
+	color: #999;
 }
 
 #contributors.error {
-    font-style: italic;
+	font-style: italic;
 }
 
-#contributors>a {
-    display: inline-block;
-    margin: 2px 0;
+#contributors > a {
+	display: inline-block;
+	margin: 2px 0;
 }
 
-#contributors>a::after {
-    display: none;
-    /* Hide the link underline */
-}
-
-#contributors img {
-    height: 42px;
-    width: 42px;
-    margin-right: 10px;
-    border-radius: 50%;
-    transition: all 80ms ease-in-out;
-}
-
-#contributors a:hover img, #contributors a:focus img {
-    transform: scale(1.1);
-}
-
-
-/* Min-width break to add more padding on wider screens */
-
-@media all and (min-width: 720px) {
-    h1 {
-        padding: 10vw;
-    }
-    main {
-        padding: 15px;
-    }
-}
-
-
-/*Floating nav bar*/
-
-.nav-ul {
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-.nav-li {
-    float: left;
-}
-
-.nav-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.nav-li a:hover {
-    background-color: #111;
-}
-
-.nav-li a::after {
+/* Hide the link underline */
+#contributors > a::after {
 	display: none;
 }
 
-/*Footer*/
-
-
-footer {
-	  height: 30px;
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    list-style-type: none;
-    margin: 0px;
-		padding: 10px;
-    overflow: hidden;
-    background-color: #333;
+#contributors img {
+	height: 42px;
+	width: 42px;
+	margin-right: 10px;
+	border-radius: 50%;
+	transition: all 80ms ease-in-out;
 }
 
-.social-buttons {
-		text-align: right;
-		padding-right: 25px;
+#contributors a:hover img, #contributors a:focus img {
+	transform: scale(1.1);
+}
+
+
+
+/*Floating nav bar*/
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	width: 100%;
+	height: 54px;
+
+	margin: 0;
+	padding: 0;
+
+	color: white;
+	background-color: #333;
+}
+
+nav a:link,
+nav a:visited {
+
+	display: block;
+	padding: 0 18px;
+
+	height: 54px;
+	line-height: 54px;
+
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+nav a:hover {
+	background-color: #111;
+}
+
+nav a::after {
+	display: none;
+}
+
+nav a.logo svg {
+	width: 21px;
+	height: 28px;
+	margin-top: 13px;
+}
+nav a.logo path {
+	fill: white;
+}
+
+nav .fill {
+	flex-grow: 1;
+}
+
+nav .fa-lg {
+    font-size: 1.7em;
+}
+
+
+/* PR listings */
+#pr-container {
+	display: none;
+	text-align: center;
+}
+
+#pr-container h4 {
+	margin-bottom: 0
+}
+
+#pr-container p {
+	margin: 5px;
+	font-size: 0.9em;
+}
+
+
+
+/* Floating footer */
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	width: 100%;
+	height: 48px;
+
+	margin: 0px;
+	padding: 0 4px;
+
+	background-color: #333;
+	text-align: right;
+}
+
+/* Hide the links while the button script is loading */
+
+footer a:link,
+footer a:visited {
+	color: #333;
+}
+
+
+#lastpr-container
+{
+	text-align: center;
+}
+
+
+footer a::after {
+	display: none;
+}
+
+footer iframe {
+	margin: 0 6px;
+}
+
+@media screen and (max-width: 480px) {
+    #banner h1 {		
+	    padding-top: 30px;
+	    padding-bottom: 15px;
+    }
+	
+    footer {
+	    display: none;
+	}
+}
+
+/* Min-width break to add more padding on wider screens */
+@media all and (min-width: 720px) {
+	main {
+		padding: 50px;
+	}
+	
+	#pr-container {
+		padding-top: 80px;
+		margin-bottom: -100px;
+	}
+}
+
+pr-badge a, 
+pr-badge a:visited, 
+pr-badge a:hover, 
+pr-badge a:active
+pr-badge a:hover::after,
+pr-badge a:focus::after  {
+    text-decoration: none;
 }
