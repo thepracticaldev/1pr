@@ -299,7 +299,7 @@ pr-badge a,
 pr-badge a:visited, 
 pr-badge a:hover, 
 pr-badge a:active
-a:hover::after,
-a:focus::after  {
+pr-badge a:hover::after,
+pr-badge a:focus::after  {
     text-decoration: none;
 }
