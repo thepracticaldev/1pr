@@ -294,3 +294,9 @@ footer iframe {
 		margin-bottom: -100px;
 	}
 }
+
+pr-badge,
+pr-badge a {
+	text-decoration: none;
+	border-bottom: 0px;
+}
