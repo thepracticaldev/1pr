@@ -256,6 +256,8 @@
 	transition: all .3s ease
 }
 
+.gitter-open-chat-button::after, .gitter-open-chat-button:visited::after { display: none; }
+
 
 .gitter-open-chat-button,
 .gitter-open-chat-button:visited {
