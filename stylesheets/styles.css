@@ -302,4 +302,5 @@ pr-badge a:active
 pr-badge a:hover::after,
 pr-badge a:focus::after  {
     text-decoration: none;
+    background: none; */
 }
