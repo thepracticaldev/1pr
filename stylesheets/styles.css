@@ -295,8 +295,9 @@ footer iframe {
 	}
 }
 
-pr-badge,
-pr-badge a {
-	text-decoration: none;
-	border-bottom: 0px;
+pr-badge a, 
+pr-badge a:visited, 
+pr-badge a:hover, 
+pr-badge a:active {
+    text-decoration: none;
 }
