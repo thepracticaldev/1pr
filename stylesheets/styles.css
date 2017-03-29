@@ -277,7 +277,7 @@ pr-badge a:focus::after  {
 }
 
 #menu-button {
-	padding-right: 15px;	
+	margin-right: 15px;	
 }
 
 #sidebar {
