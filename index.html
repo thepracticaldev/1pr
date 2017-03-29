@@ -31,7 +31,9 @@
 			<div class="fill"></div>
 
 <!-- 			<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a> -->
-			<a onclick="toggleSidebar()" role="button" id="button">Click Me</a>
+			<a onclick="toggleSidebar()" role="button">
+				<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+			</a>
 		</nav>
 		
 		<div id="main-content">
@@ -120,12 +122,7 @@
 		useStyles: false
   };
 			    
-
-  ((window.gitter = {}).chat = {}).options = {
-    room: 'thepracticaldev/1pr',
-		useStyles: false
-  };
-			    
+	    
 function toggleSidebar(){
 	sidebar = document.getElementById("sidebar");
 	mainContent = document.getElementById("main-content");
