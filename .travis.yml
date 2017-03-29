@@ -1,13 +1,9 @@
-dist: trusty
-sudo: false
-language: python
-python:
-  - "3.6"
-install: pip install -r ci/requirements.txt
-script: ci/html5validate.sh
-addons:
-  apt:
-    packages:
-    # install Java 8 as required by vnu.jar
-    - oracle-java8-installer
-    - oracle-java8-set-default
+language: node_js
+node_js:
+  - "6"
+before_script:
+  - npm install -g htmlhint csslint jshint
+script:
+  - htmlhint
+  - csslint stylesheets
+  - jshint scripts

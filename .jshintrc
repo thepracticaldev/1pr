@@ -1,0 +1,15 @@
+{
+	"esversion": 6,
+	"bitwise": true,
+	"curly": true,
+	"eqeqeq": true,
+	"freeze": true,
+	"nocomma": true,
+	"nonbsp": true,
+	"notypeof": true,
+	"shadow": true,
+	"strict": "global",
+	"undef": true,
+	"unused": true,
+	"browser": true
+}

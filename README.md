@@ -19,6 +19,15 @@ View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.githu
 - Hope you get picked
 
 
+## Project structure
+The project's structure is pretty simple.
+
+- HTML files go in the root directory
+- CSS goes in the `stylesheets/` directory
+- Javascript goes in the `scripts/` directory
+- Third-party libraries (CSS and JS) go in the `vendor/` directory, which is ignored by the linters (see **Testing** below).
+
+
 ## Coding standards
 When contributing, please try to follow the coding standards so we have nice looking code that's easy to follow for everyone.
 
@@ -42,3 +51,53 @@ Tab width is not defined in the editorconfig, so each deveveloper can set their 
 - Use semicolons (even through they're not strictly necessary). It's good practice!
 - Use `let` and `const` where applicable, to keep the scope of your variables specific. Don't know what scope is or what `let` does? Check out [this article](https://medium.com/@MentallyFriendly/es6-an-idiots-guide-to-let-and-const-70be9691c389).
 - Use `lowerCamelCase` for variable names (not `snake_case`)
+
+
+## Testing
+The project contains the files `.htmlhintrc`, `.csslintrc` and `.jshintrc` for the respective testing utilities.
+
+To install the testing utilities locally, install [Node.js](https://nodejs.org/en/) and then use npm (bundled with Node.js) to install the utilities:
+
+```Bash
+# HTML validation
+npm install --global htmlhint
+
+# CSS linter
+npm install --global csslint
+
+# JSHint
+npm install --global jshint
+```
+
+
+#### HTML settings
+- All tags should be lowercase
+- Use double quotes for attributes
+- No duplicate attributes
+- HTML5 doctype on the first line
+- Must have a title tag
+- IDs must be unique
+- Src and alt attribute required on images
+- No scripts in the head (place them at the bottom of the body)
+- No inline style attributes or javascript event handlers (e.g. onclick="")
+
+#### CSS settings
+- No empty rules
+- No duplicate properties with the same value ([more info](https://github.com/CSSLint/csslint/wiki/Disallow-duplicate-properties))
+- Limit the amount of floats used
+- Limit the amount of different font sizes used
+- Don't use important ([why?](https://github.com/CSSLint/csslint/wiki/Disallow-%21important))
+- Don't use outline: none unless you have a :focus rule on the same element to replace the outline
+- Don't use elements in the css when only a class name will suffice
+- Don't use regex selectors
+- Encourage the use of shorthand notation
+
+#### JS settings
+- Always use strict mode
+- Avoid using bitwise operators
+- Always use curly brackets, even for a single line
+- Compare values with `===` and `!==` for type safety
+- Don't extend prototypes of native objects (e.g. `Array` or `Date`)
+- Don't use the comma operator
+- Avoid declaring a variable that's already declared in a higher scope
+- Avoid declaring variables and not using them
