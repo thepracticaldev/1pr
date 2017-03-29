@@ -267,40 +267,6 @@ footer iframe {
 	margin: 0 6px;
 }
 
-@media screen and (max-width: 480px) {
-    #banner h1 {
-	    padding-top: 30px;
-	    padding-bottom: 15px;
-    }
-
-    footer {
-	    display: none;
-	}
-}
-
-/* Min-width break to add more padding on wider screens */
-@media all and (max-width: 720px) {
-	#sidebar {
-		display: none;
-	}
-	
-	#main-content {
-	    margin-left: 0px;
-	}
-}
-
-/* Min-width break to add more padding on wider screens */
-@media all and (min-width: 720px) {
-	main {
-		padding: 50px;
-	}
-
-	#pr-container {
-		padding-top: 80px;
-		margin-bottom: -100px;
-	}
-}
-
 pr-badge a,
 pr-badge a:visited,
 pr-badge a:hover,
@@ -345,6 +311,40 @@ pr-badge a:focus::after  {
 
 #main-content {
     margin-top: 50px;
-    margin-left: 200px;
     background-color: #fff;
+}
+
+
+@media screen and (max-width: 480px) {
+    #banner h1 {
+	    padding-top: 30px;
+	    padding-bottom: 15px;
+    }
+
+    footer {
+	    display: none;
+	}
+}
+
+/* Min-width break to add more padding on wider screens */
+@media all and (max-width: 720px) {
+	#sidebar {
+		display: none;
+	}
+}
+
+/* Min-width break to add more padding on wider screens */
+@media all and (min-width: 720px) {
+	main {
+		padding: 50px;
+	}
+
+	#pr-container {
+		padding-top: 80px;
+		margin-bottom: -100px;
+	}
+	
+	#main-content {
+	    margin-left: 200px;
+	}
 }
