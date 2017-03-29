@@ -315,7 +315,8 @@ pr-badge a:focus::after  {
     width: 200px;
 }
 
-#sidebar li a {
+#sidebar li a,
+#sidebar li a:visited {
     display: block;
     padding: 10px 16px;
     color: #fff;
@@ -323,6 +324,7 @@ pr-badge a:focus::after  {
 }
 
 #sidebar li a:hover {
+    color: #fff;
     background-color: #555;
 }
 
