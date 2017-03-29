@@ -30,7 +30,8 @@
 
 			<div class="fill"></div>
 
-			<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a>
+<!-- 			<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a> -->
+			<a href="#" id="button">Click Me</a>
 		</nav>
 		
 		<div id="main-content">
@@ -118,6 +119,18 @@
     room: 'thepracticaldev/1pr',
 		useStyles: false
   };
+			
+var button = document.getElementById("button"),
+    paragraph = document.getElementById("sidebar");
+
+button.addEventListener("click", function(){
+  if (paragraph.style.display == 'none') {
+    paragraph.style.display = 'block';
+  } else {
+    paragraph.style.display = 'none';
+  }
+}, false);
+			
 </script>
 <script src="scripts/sidecar.v1.js" async defer></script>
 
