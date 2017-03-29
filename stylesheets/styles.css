@@ -305,7 +305,7 @@ pr-badge a:focus::after  {
     left: 0px;
     bottom: 0px;
     width: 200px;
-    background-color: #646161;
+    background-color: #4a4646;
 }
 
 #sidebar ul {
