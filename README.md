@@ -55,9 +55,9 @@ Tab width is not defined in the editorconfig, so each deveveloper can set their 
 
 
 ## Testing
-The project contains the files `.htmlhintrc`, `.csslintrc` and `.jshintrc` for the respective testing utilities.
+The project contains the files `.htmlhintrc`, `.csslintrc` and `.jshintrc` with configuration for the respective testing utilities.
 
-To install the testing utilities locally, install [Node.js](https://nodejs.org/en/) and then use npm (bundled with Node.js) to install the utilities:
+To install the testing utilities locally, simply install [Node.js](https://nodejs.org/en/) and then use npm (bundled with Node.js) to install the utilities:
 
 ```Bash
 # HTML validation
@@ -73,8 +73,9 @@ npm install --global jshint
 
 #### HTML validation
 
+Run the HTML validator with:
 ```
-$ htmlhint
+htmlhint
 ```
 
 - All tags should be lowercase
@@ -85,21 +86,22 @@ $ htmlhint
 - IDs must be unique
 - Src and alt attribute required on images
 - No scripts in the head (place them at the bottom of the body)
-- No inline style attributes or javascript event handlers (e.g. onclick="")
+- No inline style attributes or javascript event handlers (e.g. `onclick=""`)
 
 
 #### CSS validation
 
+Run the CSS validator with:
 ```
-$ csslint stylesheets
+csslint stylesheets
 ```
 
 - No empty rules
-- No duplicate properties with the same value ([more info](https://github.com/CSSLint/csslint/wiki/Disallow-duplicate-properties))
+- No duplicate properties with the same value
 - Limit the amount of floats used
 - Limit the amount of different font sizes used
-- Don't use important ([why?](https://github.com/CSSLint/csslint/wiki/Disallow-%21important))
-- Don't use outline: none unless you have a :focus rule on the same element to replace the outline
+- Don't use `!important`
+- Don't use `outline: none` unless you have a `:focus` rule on the same element to replace the outline
 - Don't use elements in the css when only a class name will suffice
 - Don't use regex selectors
 - Encourage the use of shorthand notation
@@ -107,8 +109,9 @@ $ csslint stylesheets
 
 #### JS validation
 
+Run the Javascript validator with:
 ```
-$ jshint scripts
+jshint scripts
 ```
 
 - Always use strict mode
@@ -117,5 +120,5 @@ $ jshint scripts
 - Compare values with `===` and `!==` for type safety
 - Don't extend prototypes of native objects (e.g. `Array` or `Date`)
 - Don't use the comma operator
-- Avoid declaring a variable that's already declared in a higher scope
+- Avoid declaring variables that are already declared in a higher scope
 - Avoid declaring variables and not using them
