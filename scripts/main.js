@@ -6,7 +6,7 @@
 
 
 function toggleSidebar(){
-	sidebar     = document.getElementById("sidebar"),
+	sidebar     = document.getElementById("sidebar");
 	if (sidebar.style.display == 'none') {
 		sidebar.style.display = 'block';
 	} else {
