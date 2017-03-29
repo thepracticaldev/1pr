@@ -15,12 +15,3 @@ function toggleSidebar(){
 		sidebar.style.display = 'block';
 	}
 }
-
-var mainContent = document.querySelector('#main-content');
-mainContent.onresize = function(){
-	
-	if ( mainContent.getComputedStyle(element).width > 720 && sidebar.style.display == 'none') {
-		sidebar.style.display = 'block';
-	}
-		
-};
