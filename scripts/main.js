@@ -9,7 +9,10 @@ function toggleSidebar(){
 	sidebar     = document.getElementById("sidebar");
 	if (sidebar.style.display == 'none') {
 		sidebar.style.display = 'block';
-	} else {
+	} else if (sidebar.style.display == 'block') {
+		sidebar.style.display = 'none';	
+	}
+	else {
 		sidebar.style.display = 'none';
 	}
 }
