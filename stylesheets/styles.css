@@ -38,16 +38,14 @@ label {
 a,
 a:link,
 a:visited {
-
 	display: inline-block;
 	color: #2980b9;
-	text-decoration: none !important;
+	text-decoration: none;
 }
 
 a:hover,
 a:focus {
 	color: #3498db;
-	text-decoration: none !important;
 }
 
 
@@ -277,7 +275,7 @@ pr-badge a:focus::after  {
 }
 
 #menu-button {
-	margin-right: 15px;	
+	margin-right: 15px;
 }
 
 #sidebar {
@@ -310,7 +308,7 @@ pr-badge a:focus::after  {
 }
 
 #sidebar li a::after {
-    background: none !important;
+    background: none;
 }
 
 #main-content {
@@ -347,11 +345,11 @@ pr-badge a:focus::after  {
 		padding-top: 80px;
 		margin-bottom: -100px;
 	}
-	
+
 	#main-content {
 	    margin-left: 200px;
 	}
-	
+
 	#menu-button {
 		display: none;
 	}
