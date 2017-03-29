@@ -276,6 +276,10 @@ pr-badge a:focus::after  {
     text-decoration: none;
 }
 
+#menu-button {
+	padding-right: 15px;	
+}
+
 #sidebar {
     position: fixed;
     top: 52px;
