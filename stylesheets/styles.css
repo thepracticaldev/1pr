@@ -351,4 +351,8 @@ pr-badge a:focus::after  {
 	#main-content {
 	    margin-left: 200px;
 	}
+	
+	#menu-button {
+		display: none;
+	}
 }
