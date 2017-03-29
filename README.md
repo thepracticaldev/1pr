@@ -53,6 +53,7 @@ Tab width is not defined in the editorconfig, so each deveveloper can set their 
 - Use `lowerCamelCase` for variable names (not `snake_case`)
 
 
+
 ## Testing
 The project contains the files `.htmlhintrc`, `.csslintrc` and `.jshintrc` for the respective testing utilities.
 
@@ -70,7 +71,12 @@ npm install --global jshint
 ```
 
 
-#### HTML settings
+#### HTML validation
+
+```
+$ htmlhint
+```
+
 - All tags should be lowercase
 - Use double quotes for attributes
 - No duplicate attributes
@@ -81,7 +87,13 @@ npm install --global jshint
 - No scripts in the head (place them at the bottom of the body)
 - No inline style attributes or javascript event handlers (e.g. onclick="")
 
-#### CSS settings
+
+#### CSS validation
+
+```
+$ csslint stylesheets
+```
+
 - No empty rules
 - No duplicate properties with the same value ([more info](https://github.com/CSSLint/csslint/wiki/Disallow-duplicate-properties))
 - Limit the amount of floats used
@@ -92,7 +104,13 @@ npm install --global jshint
 - Don't use regex selectors
 - Encourage the use of shorthand notation
 
-#### JS settings
+
+#### JS validation
+
+```
+$ jshint scripts
+```
+
 - Always use strict mode
 - Avoid using bitwise operators
 - Always use curly brackets, even for a single line
