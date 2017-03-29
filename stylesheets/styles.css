@@ -307,6 +307,28 @@ pr-badge a:focus::after  {
     width: 200px;
     background-color: #646161;
 }
+
+#sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+#sidebar li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+#sidebar li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+
 #main-content {
     margin-top: 50px;
     margin-left: 200px;
