@@ -301,7 +301,7 @@ pr-badge a:focus::after  {
 
 #sidebar {
     position: fixed;
-    top: 50px;
+    top: 52px;
     left: 0px;
     bottom: 0px;
     width: 200px;
@@ -322,12 +322,14 @@ pr-badge a:focus::after  {
     text-decoration: none;
 }
 
-/* Change the link color on hover */
 #sidebar li a:hover {
     background-color: #555;
     color: white;
 }
 
+#sidebar li a::after {
+    background: none;
+}
 
 #main-content {
     margin-top: 50px;
