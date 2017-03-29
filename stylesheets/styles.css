@@ -328,7 +328,7 @@ pr-badge a:focus::after  {
 }
 
 #sidebar li a::after {
-    background: none;
+    background: none !important;
 }
 
 #main-content {
