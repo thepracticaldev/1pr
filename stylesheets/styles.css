@@ -152,6 +152,7 @@ nav {
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 1;
 
 	display: flex;
 	justify-content: flex-start;
@@ -296,4 +297,18 @@ pr-badge a:active
 pr-badge a:hover::after,
 pr-badge a:focus::after  {
     text-decoration: none;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 200px;
+    background-color: #646161;
+}
+#main-content {
+    margin-top: 50px;
+    margin-left: 200px;
+    background-color: #fff;
 }
