@@ -318,12 +318,12 @@ pr-badge a:focus::after  {
 #sidebar li a {
     display: block;
     padding: 10px 16px;
+    color: #fff;
     text-decoration: none;
 }
 
 #sidebar li a:hover {
     background-color: #555;
-    color: white;
 }
 
 #sidebar li a::after {
