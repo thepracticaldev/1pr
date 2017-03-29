@@ -301,7 +301,7 @@ pr-badge a:focus::after  {
 
 #sidebar {
     position: fixed;
-    top: 0px;
+    top: 50px;
     left: 0px;
     bottom: 0px;
     width: 200px;
