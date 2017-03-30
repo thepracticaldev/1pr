@@ -1,4 +1,5 @@
 ﻿var OnePRGame = {
+	// Map is a set of rows, each row has a set of tiles.
     Map: [{
         Row: [
             {
@@ -132,8 +133,11 @@
 };
 
 OnePRGame.Load = function () {
+
     let startRow = 0, startCol = 0;
 
+	// Add some row/column properties to the tiles - easier to do this than by hand.
+	// Also getting player start position row/column.
     for (let i = 0; i < OnePRGame.Map.length; i++) {
         for (let j = 0; j < OnePRGame.Map[i].Row.length; j++) {
             if (OnePRGame.Map[i].Row[j].IsStart) {
@@ -145,6 +149,14 @@ OnePRGame.Load = function () {
             OnePRGame.Map[i].Row[j].Column = j;
         }
     }
+
+    OnePRGame.LoadMap();
+    OnePRGame.LoadPlayer(startRow, startCol);
+    OnePRGame.LoadControls();
+
+};
+
+OnePRGame.LoadMap = function () {
 
     /*
 
@@ -174,11 +186,10 @@ OnePRGame.Load = function () {
 
     }
 
-    OnePRGame.LoadPlayer(startRow, startCol);
-    OnePRGame.LoadControls();
 };
 
 OnePRGame.PlayerAction = function (player, action) {
+
     let playerElement = document.getElementsByClassName('player')[0];
     playerElement.removeChild(playerElement.childNodes[1]);
 
@@ -186,9 +197,11 @@ OnePRGame.PlayerAction = function (player, action) {
     playerAction.className = 'action';
     playerAction.textContent = action;
     playerElement.appendChild(playerAction);
+
 };
 
 OnePRGame.LoadPlayer = function (startRow, startCol) {
+
     let player = document.createElement('div');
     player.className = 'player';
 
@@ -209,6 +222,7 @@ OnePRGame.LoadPlayer = function (startRow, startCol) {
         Column: startCol,
         Score: 0
     };
+
 };
 
 OnePRGame.LoadControls = function () {
