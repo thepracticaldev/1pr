@@ -54,6 +54,7 @@
 
 			el('pull-requests-container').appendChild(pullRequest);
 
+            gapi.plusone.go();
 		}
 
 	});
