@@ -96,7 +96,7 @@ main {
 }
 
 /* Pull Request Voting elements */
-.pull-requests-container p {
+#pull-requests-container p {
 	display: inline-block;
 	width: 49%;
 	vertical-align: top;
@@ -331,7 +331,7 @@ pr-badge a:focus::after  {
 		padding-bottom: 15px;
 	}
 
-	.pull-requests-container p {
+	#pull-requests-container p {
 		width: 100%;
 	}
 
