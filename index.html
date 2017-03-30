@@ -32,41 +32,67 @@
 
 			<div class="fill"></div>
 
-			<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a>
+<!-- 			<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a> -->
+			<a id="menu-button" onclick="toggleSidebar()" role="button">
+				<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+			</a>
 		</nav>
 
-		<div id="banner">
+		<div id="main-content">
 
-			<h1>I will be accepting up to one pull&nbsp;request per day on <a href="https://github.com/thepracticaldev/1pr">this&nbsp;project</a>.</h1>
-
-			<a target="_blank" href="https://github.com/thepracticaldev/1pr/pulls" id="pr-badge">
-				<img src="https://img.shields.io/github/issues-pr/thepracticaldev/1pr.svg" height="34" alt="Open Pull Requests"/>
-			</a>
-
-			<div id="pr-container">
-				<h4>Last Merged Pull Request</h4>
-				<p id="pr-last"></p>
+			<div id="sidebar">
+				<ul>
+				  <li>
+					  <a href="#">First Page</a>
+				  </li>
+				  <li>
+					  <a href="#">Second Page</a>
+				  </li>
+				  <li>
+					  <a href="#">Third Page</a>
+				  </li>
+				  <li>
+					  <a href="#">Fourth Page</a>
+				  </li>
+				</ul>
 			</div>
 
-		</div>
+		    <div id="content">
+				<div id="banner">
 
-		<main>
+					<h1>I will be accepting up to one pull&nbsp;request per day on <a href="https://github.com/thepracticaldev/1pr">this&nbsp;project</a>.</h1>
 
-			<p>Interested in contributing, but not sure where to start?</p>
-			<ul>
-				<li>For a primer on git: <a target="_blank" href="http://www.theodinproject.com/courses/web-development-101/lessons/introduction-to-git">click here</a></li>
-				<li>Find some inspiration for cool ideas on what you can add to the project <a target="_blank" href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s">from this medium post</a></li>
-			</ul>
+					<a target="_blank" href="https://github.com/thepracticaldev/1pr/pulls" id="pr-badge">
+						<img src="https://img.shields.io/github/issues-pr/thepracticaldev/1pr.svg" height="34" alt="Open Pull Requests"/>
+					</a>
 
-		</main>
+					<div id="pr-container">
+						<h4>Last Merged Pull Request</h4>
+						<p id="pr-last"></p>
+					</div>
 
-		<div id="contributors-container">
+				</div>
 
-			<h4>A project by</h4>
+				<main>
 
-			<!-- This will become the list of contributors -->
-			<div id="contributors"></div>
+					<p>Interested in contributing, but not sure where to start?</p>
+					<ul>
+						<li>For a primer on git: <a target="_blank" href="http://www.theodinproject.com/courses/web-development-101/lessons/introduction-to-git">click here</a></li>
+						<li>Find some inspiration for cool ideas on what you can add to the project <a target="_blank" href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s">from this medium post</a></li>
+					</ul>
 
+				</main>
+
+				<div id="contributors-container">
+
+					<h4>A project by</h4>
+
+					<!-- This will become the list of contributors -->
+					<div id="contributors"></div>
+
+				</div>
+
+		    </div>
 		</div>
 
 
@@ -80,6 +106,12 @@
 
 		</footer>
 
+		<!-- Gitter script -->
+		<script src="scripts/sidecar.v1.js" async defer></script>
+
+		<!-- Custom Scripts -->
+		<script src="scripts/main.js"></script>
+
 		<!-- Load the shared API script -->
 		<script src="scripts/api.js"></script>
 
@@ -90,16 +122,13 @@
 		<!-- GH buttons script -->
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 
-
-
-		<script>
+		<!-- <script>
   ((window.gitter = {}).chat = {}).options = {
     room: 'thepracticaldev/1pr',
 		useStyles: false
   };
 </script>
-<script src="scripts/sidecar.v1.js" async defer></script>
-
+<script src="scripts/sidecar.v1.js" async defer></script> -->
 
 	</body>
 
