@@ -29,16 +29,23 @@
                 Move: 'Down',
                 IsStart: true,
                 OnArrive: function (user) {
-                    return user.Score += 200;
+                    OnePRGame.PlayerAction(user, 'PULL REQUEST!');
+					user.Score += 200;
                 }
             },
             {
                 Color: '#FF0',
-                Move: 'Left'
+                Move: 'Left',
+                OnArrive: function (user) {
+                    OnePRGame.PlayerAction(user, 'COMMIT!');
+                }
             },
             {
                 Color: '#00F',
-                Move: 'Left'
+                Move: 'Left',
+                OnArrive: function (user) {
+                    OnePRGame.PlayerAction(user, 'COMMIT!');
+                }
             },
             {
                 Color: '#000'
@@ -52,14 +59,20 @@
             },
             {
                 Color: '#0FF',
-                Move: 'Down'
+                Move: 'Down',
+                OnArrive: function (user) {
+                    OnePRGame.PlayerAction(user, 'COMMIT!');
+                }
             },
             {
                 Color: '#000'
             },
             {
                 Color: '#F00',
-                Move: 'Up'
+                Move: 'Up',
+                OnArrive: function (user) {
+                    OnePRGame.PlayerAction(user, 'COMMIT!');
+                }
             },
             {
                 Color: '#000'
@@ -73,15 +86,24 @@
             },
             {
                 Color: '#0F0',
-                Move: 'Right'
+                Move: 'Right',
+                OnArrive: function (user) {
+                    OnePRGame.PlayerAction(user, 'COMMIT!');
+                }
             },
             {
                 Color: '#FFF',
-                Move: 'Right'
+                Move: 'Right',
+                OnArrive: function (user) {
+                    OnePRGame.PlayerAction(user, 'COMMIT!');
+                }
             },
             {
                 Color: '#F0F',
-                Move: 'Up'
+                Move: 'Up',
+                OnArrive: function (user) {
+                    OnePRGame.PlayerAction(user, 'COMMIT!');
+                }
             },
             {
                 Color: '#000'
@@ -152,16 +174,33 @@ OnePRGame.Load = function () {
 
     }
 
-    OnePRGame.LoadUser(startRow, startCol);
+    OnePRGame.LoadPlayer(startRow, startCol);
     OnePRGame.LoadControls();
 };
 
-OnePRGame.LoadUser = function (startRow, startCol) {
+OnePRGame.PlayerAction = function (player, action) {
+    let playerElement = document.getElementsByClassName('player')[0];
+    playerElement.removeChild(playerElement.childNodes[1]);
+
+    let playerAction = document.createElement('div');
+    playerAction.className = 'action';
+    playerAction.textContent = action;
+    playerElement.appendChild(playerAction);
+};
+
+OnePRGame.LoadPlayer = function (startRow, startCol) {
     let player = document.createElement('div');
     player.className = 'player';
-    player.textContent = 'X';
+
+    player.textContent = 'DEV';
     player.style.top = (100 * startRow) + 'px';
     player.style.left = (100 * startCol) + 'px';
+
+    let playerAction = document.createElement('div');
+    playerAction.className = 'action';
+    playerAction.textContent = 'INITIAL CHECKIN!';
+    player.appendChild(playerAction);
+
     document.getElementsByClassName('game-board')[0].appendChild(player);
 
     OnePRGame.Player = {
