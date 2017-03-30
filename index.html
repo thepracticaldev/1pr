@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
@@ -79,6 +79,9 @@
 						<li>Find some inspiration for cool ideas on what you can add to the project <a target="_blank" href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s">from this medium post</a></li>
 					</ul>
 
+					<p>Check out what pull requests are up for selection:</p>
+					<div id="pull-requests-container"></div>
+
 				</main>
 
 				<div id="contributors-container">
@@ -114,13 +117,17 @@
 		<script src="scripts/api.js"></script>
 
 		<!-- Asynchronously load the other scripts -->
+		<script src="scripts/vote.js" async></script>
 		<script src="scripts/contributors.js" async></script>
 		<script src="scripts/pr.js" async></script>
 
 		<!-- GH buttons script -->
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 
-		
+		<!-- Google+ Button -->
+		<script src="https://apis.google.com/js/platform.js" async defer>
+			{ parsetags: 'explicit' }
+		</script>
 	</body>
 
 </html>
