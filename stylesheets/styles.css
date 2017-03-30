@@ -1,4 +1,4 @@
-/* Fonts */
+﻿/* Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
@@ -95,6 +95,12 @@ main {
 	text-align: center;
 }
 
+/* Pull Request Voting elements */
+#pull-requests-container p {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
 
 /* Contributor elements */
 #contributors-container {
@@ -320,10 +326,14 @@ pr-badge a:focus::after  {
 
 
 @media screen and (max-width: 480px) {
-    #banner h1 {
-	    padding-top: 30px;
-	    padding-bottom: 15px;
-    }
+	#banner h1 {
+		padding-top: 30px;
+		padding-bottom: 15px;
+	}
+
+	#pull-requests-container p {
+		width: 100%;
+	}
 
     footer {
 	    display: none;
