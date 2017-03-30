@@ -11,8 +11,6 @@
 	</head>
 
 	<body>
-
-
 		<nav>
 			<a class="logo" href="https://thepracticaldev.github.io/1pr/">
 				<!-- SVG code copied from Github -->
@@ -29,15 +27,22 @@
 			</a>
 
 			<div class="fill"></div>
+			<a id="login-button" onclick="firebaseLogin()" role="button" target="_blank" rel="noopener">
+				<i class="fa fa-sign-in" aria-hidden="true"></i>Sign In
+			</a>
 
-<!-- 			<a target="_blank" href="https://github.com/thepracticaldev/1pr/blob/master/index.html">Edit</a> -->
+			<span id="firebaseUser"></span>
+			<a id="logout-button" onclick="firebaseLogout()" role="button" style="display: none">
+				<i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out
+			</a>
+
 			<a id="menu-button" onclick="toggleSidebar()" role="button">
 				<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
 			</a>
 		</nav>
-		
+
 		<div id="main-content">
-		    
+
 			<div id="sidebar">
 				<ul>
 				  <li>
@@ -54,8 +59,8 @@
 				  </li>
 				</ul>
 			</div>
-			
-		    <div id="content">
+
+			<div id="content">
 				<div id="banner">
 
 					<h1>I will be accepting up to one pull&nbsp;request per day on <a href="https://github.com/thepracticaldev/1pr">this&nbsp;project</a>.</h1>
@@ -84,19 +89,17 @@
 				<div id="contributors-container">
 
 					<h4>A project by</h4>
-	
+
 					<!-- This will become the list of contributors -->
 					<div id="contributors"></div>
 
 				</div>
-			    
-		    </div>
-		</div>
 
-		<div id="firebaseTestArea">
-			<span id="firebaseUser"></span>
-			<button id="firebaseTestIncrement">Increment</button>
-			<span id="firebaseTestOutput"></span>
+				<div id="firebaseTestArea">
+					<button id="firebaseTestIncrement">Increment</button>
+					<span id="firebaseTestOutput"></span>
+				</div>
+			</div>
 		</div>
 
 		<footer>
@@ -108,28 +111,16 @@
 			<a class="github-button" href="https://github.com/thepracticaldev/1pr/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/thepracticaldev/1pr/network" data-count-api="/repos/thepracticaldev/1pr#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork thepracticaldev/1pr on GitHub">Fork</a>
 
 		</footer>
-		
+
 		<!-- Gitter script -->
 		<script src="scripts/sidecar.v1.js" async defer></script>
-		
+
 		<!-- Custom Scripts -->
 		<script src="scripts/main.js"></script>
 
 		<!-- Load the shared API script -->
 		<script src="scripts/api.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
-		<script>
-		// Initialize Firebase
-		var config = {
-			apiKey: "AIzaSyBTsOTB3XvmDdU6RcO1DlOOV-govpkDs4E",
-			authDomain: "onepr-453d8.firebaseapp.com",
-			databaseURL: "https://onepr-453d8.firebaseio.com",
-			storageBucket: "onepr-453d8.appspot.com",
-			messagingSenderId: "240320654850"
-		};
-		firebase.initializeApp(config);
-		</script>
 
 
 		<!-- Asynchronously load the other scripts -->
@@ -140,7 +131,7 @@
 		<!-- GH buttons script -->
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 
-		
+
 	</body>
 
 </html>

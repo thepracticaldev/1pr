@@ -1,51 +1,47 @@
 // Wrap everything inside a scoped function
-(function loadContributors() {
+(function firebaseInit() {
 
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBTsOTB3XvmDdU6RcO1DlOOV-govpkDs4E",
+		authDomain: "onepr-453d8.firebaseapp.com",
+		databaseURL: "https://onepr-453d8.firebaseio.com",
+		storageBucket: "onepr-453d8.appspot.com",
+		messagingSenderId: "240320654850"
+	};
+	firebase.initializeApp(config);
+
+	var logInButton = document.getElementById("login-button");
+	var logOutButton = document.getElementById("logout-button");
+	var userSpan = document.getElementById("firebaseUser");
+
+	//Set up response to log in and log out
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			// User is signed in.
+			var displayName = user.displayName;
+			userSpan.innerHTML = "Logged in as " + displayName;
+			logInButton.setAttribute("style", "display: none");
+			logOutButton.setAttribute("style", "display: inline-block");
+		} else {
+			userSpan.innerHTML = "";
+			logInButton.setAttribute("style", "display: inline-block");
+			logOutButton.setAttribute("style", "display: None");
+		}
+	});
+
+
+	//Test stuff
 	var incrementButton = document.getElementById("firebaseTestIncrement");
 	var outputSpan = document.getElementById("firebaseTestOutput");
 	var _count = 0;
-	var provider = new firebase.auth.GithubAuthProvider();
 
 	var setCount = function(val){
 		_count = val;
 		outputSpan.innerHTML =  _count;
 	}
-	setCount(0);
 
 	var testIncrementRef = firebase.database().ref('testIncrement');
-	firebase.auth().signInWithPopup(provider).then(function(result) {
-		// This gives you a GitHub Access Token. You can use it to access the GitHub API.
-		var token = result.credential.accessToken;
-		// The signed-in user info.
-		var user = result.user;
-		// ...
-
-		testIncrementRef.once('value').then(function(initalSnapshot){
-
-		}).catch(function(error){
-			testIncrementRef.set(0);
-		});
-	}).catch(function(error) {
-		// Handle Errors here.
-		var errorCode = error.code;
-		var errorMessage = error.message;
-		// The email of the user's account used.
-		var email = error.email;
-		// The firebase.auth.AuthCredential type that was used.
-		var credential = error.credential;
-	// ...
-	});
-
-	firebase.auth().onAuthStateChanged(function(user) {
-		var userSpan = document.getElementById("firebaseUser");
-		if (user) {
-			// User is signed in.
-			var displayName = user.displayName;
-			userSpan.innerHTML = displayName;
-		} else {
-			userSpan.innerHTML = "";
-		}
-	});
 
 
 	testIncrementRef.on('value', function(snapshot) {
@@ -62,6 +58,14 @@
 		saveCount(newCount);
 	};
 
-
 })();
 
+
+var firebaseLogin = function(mouseEvent){
+	var provider = new firebase.auth.GithubAuthProvider();
+	firebase.auth().signInWithRedirect(provider);
+}
+
+var firebaseLogout = function(mouseEvent){
+	firebase.auth().signOut();
+}
