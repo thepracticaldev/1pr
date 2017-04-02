@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
@@ -7,6 +7,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/gitter.css">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	</head>
 
@@ -46,24 +48,22 @@
 		</nav>
 
 		<div id="main-content">
-
-			<div id="sidebar">
+			<div id="sidebar" class="closed">
 				<ul>
-				  <li>
-					  <a href="#">First Page</a>
-				  </li>
-				  <li>
-					  <a href="#">Second Page</a>
-				  </li>
-				  <li>
-					  <a href="#">Third Page</a>
-				  </li>
-				  <li>
-					  <a href="#">Fourth Page</a>
-				  </li>
+					<li>
+						<a href="game.html">Would you like to play a game?</a>
+					</li>
+					<li>
+						<a href="#">Second Page</a>
+					</li>
+					<li>
+						<a href="#">Third Page</a>
+					</li>
+					<li>
+						<a href="#">Fourth Page</a>
+					</li>
 				</ul>
 			</div>
-
 			<div id="content">
 				<div id="banner">
 
@@ -88,6 +88,9 @@
 						<li>Find some inspiration for cool ideas on what you can add to the project <a target="_blank" href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s" rel="noopener">from this medium post</a></li>
 					</ul>
 
+					<p>Check out what pull requests are up for selection:</p>
+					<div id="pull-requests-container"></div>
+
 				</main>
 
 				<div id="contributors-container">
@@ -98,7 +101,7 @@
 					<div id="contributors"></div>
 
 				</div>
-			</div>
+		    </div>
 		</div>
 
 		<footer>
@@ -111,7 +114,6 @@
 
 		</footer>
 
-
 		<!-- Custom Scripts -->
 		<script src="scripts/main.js"></script>
 
@@ -122,6 +124,7 @@
 		<script src="database/firebaseauth.js"></script>
 
 		<!-- Asynchronously load the other scripts -->
+		<script src="scripts/vote.js" async></script>
 		<script src="scripts/contributors.js" async></script>
 		<script src="scripts/pr.js" async></script>
 
@@ -131,7 +134,7 @@
 		<!-- GH buttons script -->
 		<script src="https://buttons.github.io/buttons.js" async defer></script>
 
-
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
 	</body>
 
 </html>
