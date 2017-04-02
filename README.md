@@ -42,3 +42,6 @@ Tab width is not defined in the editorconfig, so each deveveloper can set their 
 - Use semicolons (even through they're not strictly necessary). It's good practice!
 - Use `let` and `const` where applicable, to keep the scope of your variables specific. Don't know what scope is or what `let` does? Check out [this article](https://medium.com/@MentallyFriendly/es6-an-idiots-guide-to-let-and-const-70be9691c389).
 - Use `lowerCamelCase` for variable names (not `snake_case`)
+
+## Storing Data
+1pr is backed by a firebase database.  This allows you to save and share data without having to understand 

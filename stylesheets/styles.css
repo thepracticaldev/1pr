@@ -356,3 +356,8 @@ pr-badge a:focus::after  {
 		display: none;
 	}
 }
+
+/* Utility for quickly showing and hiding via javascript */
+.hidden{
+	display:none;
+}
