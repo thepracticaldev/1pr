@@ -283,7 +283,7 @@ pr-badge a:focus::after  {
 }
 
 #menu-button {
-	margin-right: 15px;	
+	margin-right: 15px;
 }
 
 #sidebar {
@@ -293,6 +293,12 @@ pr-badge a:focus::after  {
     bottom: 0px;
     width: 200px;
     background-color: #524c4c;
+	opacity: 1;
+	transition: all 250ms ease-out;
+}
+#sidebar.closed {
+	left: -200px;
+	opacity: 0.75;
 }
 
 #sidebar ul {
@@ -341,13 +347,6 @@ pr-badge a:focus::after  {
 }
 
 /* Min-width break to add more padding on wider screens */
-@media all and (max-width: 720px) {
-	#sidebar {
-		display: none;
-	}
-}
-
-/* Min-width break to add more padding on wider screens */
 @media all and (min-width: 720px) {
 	main {
 		padding: 50px;
@@ -357,12 +356,17 @@ pr-badge a:focus::after  {
 		padding-top: 80px;
 		margin-bottom: -100px;
 	}
-	
+
 	#main-content {
 	    margin-left: 200px;
 	}
-	
+
 	#menu-button {
 		display: none;
+	}
+
+	#sidebar.closed {
+		left: 0px;
+		opacity: 1;
 	}
 }
