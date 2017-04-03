@@ -5,13 +5,15 @@
 };
 
 function toggleSidebar(){
-	sidebar     = document.getElementById("sidebar");
-	if (sidebar.style.display == 'none') {
-		sidebar.style.display = 'block';
-	} else if (sidebar.style.display == 'block') {
-		sidebar.style.display = 'none';	
-	}
-	else {
-		sidebar.style.display = 'block';
+	sidebar = document.getElementById("sidebar");
+	if (sidebar.className == 'closed') {
+		sidebar.className = 'open';
+
+	} else if (sidebar.className == 'open') {
+		sidebar.className = 'closed';
+
+	} else {
+		sidebar.className = 'open';
+
 	}
 }
