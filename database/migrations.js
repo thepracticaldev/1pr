@@ -65,9 +65,11 @@
 				descriptionSpan = document.createElement("span");
 				descriptionSpan.appendChild(document.createTextNode(migration.description));
 				li.appendChild(descriptionSpan);
-				timestampSpan = document.createElement("span");
-				timestampSpan.appendChild(document.createTextNode(migration.timestamp));
-				li.appendChild(timestampSpan);
+				if(migration.timestamp !== undefined){
+					timestampSpan = document.createElement("span");
+					timestampSpan.appendChild(document.createTextNode(migration.timestamp));
+					li.appendChild(timestampSpan);
+				}
 				listElement.appendChild(li);
 			}
 		}
@@ -76,6 +78,7 @@
 
 	firebase.database().ref(migrationHistoryRef).on("value", function(migrationHistorySnapshot){
 		var migration = {};
+		var migrationHistoryItem = {};
 
 		//Handle no migration history node
 		self.migrationHistory = migrationHistorySnapshot.val()
@@ -89,11 +92,12 @@
 
 		for (var i = 0; i < migrations.length ; i++){
 			migration = migrations[i];
-			if (self.migrationHistory.find(function(historyItem){return historyItem.name === migration.name}) === undefined){
+			migrationHistoryItem = self.migrationHistory.find(function(historyItem){return historyItem.name === migration.name});
+			if (migrationHistoryItem === undefined){
 				self.availableMigrations.push(migration);
 			}
 			else{
-				self.appliedMigrations.push(migration);
+				self.appliedMigrations.push(migrationHistoryItem);
 			}
 		}
 
@@ -108,7 +112,9 @@
 				migration = migrations[i];
 				promise = promise.then(applyMigration(migration));
 			}
-			promise.then(() => firebase.database().ref(migrationHistoryRef).set(self.migrationHistory));
+			promise.then(() => firebase.database().ref(migrationHistoryRef).set(self.migrationHistory),(error) => console.log(error));
 		};
+	}, function(error){
+		console.log(error);
 	});
 })();
