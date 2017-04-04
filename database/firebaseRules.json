@@ -1,6 +1,27 @@
 {
   "rules": {
-    ".read": "true",
-    ".write": "auth != null"
+		//Default to administrator-access only
+    ".read": "auth != null && root.child('admins').hasChild(auth.uid)",
+    ".write": "auth != null && root.child('admins').hasChild(auth.uid)",
+		//Allow access to individual db sections as required
+		//admins records uids of administrator users
+		"admins":{
+			//Need to be able to read the admin data when logged in to check if
+			//the admin interface should be displayed or not
+			".read": "auth != null"
+		},
+		//migrationHistory records structual changes to the database
+		"migrationHistory":{
+			//admin-only feature so can inherit the above access condiions
+			"$migrationId":{
+				".validate":"newData.hasChildren(['name','description','timestamp'])",
+				"name":{
+					".validate":"newData.isString()"
+				},
+				"description":{
+					".validate":"newData.isString()"
+				}
+			}
+		}
   }
 }
