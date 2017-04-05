@@ -8,7 +8,8 @@
 	self.migrationHistory = [];
 	self.appliedMigrations = [];
 	self.availableMigrations = [];
-	const migrationHistoryRef = "migrationHistory";
+	const migrationHistoryRefName = "migrationHistory";
+	var migrationHistoryRef = firebase.database().ref(migrationHistoryRefName);
 
 	var migrations = [
 		//Define migrations here, in the order they should be applied.
@@ -25,16 +26,20 @@
 			name: "Initial migration",
 			description: "Added migration system.  Requires 'admins' node defined in database populated with an array of user ids",
 			doMigration: function(){
-				//Set up the empty migration history node
-				return firebase.database().ref(migrationHistoryRef).set(self.migrationHistory);
+				//Don't need to do anything explicitly.
+				// migrationHistoryRef gets created when the first history item (this one) gets pushed
+				//Still need to return a thenable object
+				return Promise.resolve();
 			}
 		},
 	];
 
 	var applyMigration = function(migration){
+		console.log("Applying migration", migration.name)
 		return migration.doMigration().then(function(){
+			console.log("Applied migration", migration.name)
 			//Strip out function definition when pushing to database but add timestamp for reference
-			self.migrationHistory.push({
+			migrationHistoryRef.push().set({
 				name: migration.name,
 				description: migration.description,
 				timestamp: new Date().toUTCString()
@@ -76,14 +81,14 @@
 
 	}
 
-	firebase.database().ref(migrationHistoryRef).on("value", function(migrationHistorySnapshot){
+	migrationHistoryRef.on("value", function(migrationHistorySnapshot){
 		var migration = {};
 		var migrationHistoryItem = {};
-
+		var found = false;
 		//Handle no migration history node
 		self.migrationHistory = migrationHistorySnapshot.val()
 		if (self.migrationHistory === null){
-			self.migrationHistory = [];
+			self.migrationHistory = {};
 		}
 
 		//Work out which of the above migrations are applied or waiting to be applied
@@ -92,12 +97,19 @@
 
 		for (var i = 0; i < migrations.length ; i++){
 			migration = migrations[i];
-			migrationHistoryItem = self.migrationHistory.find(function(historyItem){return historyItem.name === migration.name});
-			if (migrationHistoryItem === undefined){
-				self.availableMigrations.push(migration);
+			found = false;
+			for(var k in self.migrationHistory)
+			{
+				migrationHistoryItem = self.migrationHistory[k];
+				if (migrationHistoryItem.name === migration.name)
+				{
+					self.appliedMigrations.push(migrationHistoryItem);
+					found = true;
+					break;
+				}
 			}
-			else{
-				self.appliedMigrations.push(migrationHistoryItem);
+			if (!found){
+				self.availableMigrations.push(migration);
 			}
 		}
 
@@ -109,10 +121,10 @@
 			//Empty promise to begin promise chain
 			var promise = Promise.resolve();
 			for (var i = 0; i < self.availableMigrations.length ; i++){
-				migration = migrations[i];
+				migration = self.availableMigrations[i];
 				promise = promise.then(applyMigration(migration));
 			}
-			promise.then(() => firebase.database().ref(migrationHistoryRef).set(self.migrationHistory),(error) => console.log(error));
+			//promise.error((error) => console.log(error));
 		};
 	}, function(error){
 		console.log(error);
