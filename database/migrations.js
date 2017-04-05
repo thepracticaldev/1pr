@@ -113,6 +113,17 @@
 			}
 		}
 
+		if (self.availableMigrations.length > 0)
+		{
+			migrationButton.disabled = false;
+			migrationButton.textContent = "Apply migrations";
+		}
+		else
+		{
+			migrationButton.disabled = true;
+			migrationButton.textContent = "No migrations to apply";
+		}
+
 		populateMigrationList(appliedMigrationsList, self.appliedMigrations);
 		populateMigrationList(availableMigrationsList, self.availableMigrations);
 
