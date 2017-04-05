@@ -57,7 +57,7 @@ To set up a test database and add yourself as administrator:
 1. create a Firebase account and project
 1. replace the config details in `database\firebaseconfig.js` with the config details shown in the Firebase console
 1. copy the contents of `Firebaserules.json` into the database rules section of the console
-    - (Re-do this every time you pull new changes into your fork that change the rules file)
+  - (Re-do this every time you pull new changes into your fork that change the rules file)
 1. under the authentication section of the console, enable GitHub authentication (follow the instructions there)
 1. (optionally add your github.io subdomain or other domains where you can access your site as an authorised OAuth redirect domain)
 1. serve your files
@@ -65,30 +65,30 @@ To set up a test database and add yourself as administrator:
 1. click the sign in button in the top right to sign in with GitHub and generate a database account for yourself
 1. go to the users panel of the authentication section of the Firebase console and copy the `uid` for your newly-generated account
 1. go to the data panel of the database section and:
-    1. add a node named `admins` as a child of the root node
-    1. click the plus to add a sub-node
-    1. copy your `uid` into the name of that sub-node and add a value of true
-    1. click add to save the changes
+  1. add a node named `admins` as a child of the root node
+  1. click the plus to add a sub-node
+  1. copy your `uid` into the name of that sub-node and add a value of true
+  1. click add to save the changes
 1. go back to your 1pr page and refresh.
 1. click the newly-visible Manage Web App link
 1. Click run migrations to apply all database changes to your Firebase database
-    - (Re-run this every time you pull new changes into your fork that change the database)
+  - (Re-run this every time you pull new changes into your fork that change the database)
 
 To develop with the database:
 
 - Use the documentation to find out how to save and load data
 - By default the rules only allow administrators to edit the database, so make sure you've given yourself that role
-    - This is important -  Firebase allows connections from localhost so (given the connection details are public) anyone could serve their own script that reads and writes to the database maliciously
+  - This is important -  Firebase allows connections from localhost so (given the connection details are public) anyone could serve their own script that reads and writes to the database maliciously
 - Make a new top-level node for each feature (unless it particularly makes sense not to)
 - Remember to update the rules to allow non-admins to use your feature, though be restrictive rather than permissive
 - Remember to test those rules using the simulator build into the rules interface
 - Record the steps you take modifying the structure and data within the database in a migration:
-    1. Open up `database\migrations.js`
-    1. find the end of the `migrations` array
-    1. add a new object, following the pattern of the existing migrations, i.e.
-        - `name` - unique identifier for the migration
-        - `description` - talk about what your changes do
-        - `doMigration` - a function that returns a promise (or other thenable object) that enacts the data manipulation to achieve what you want to do
-    1. test your migration by using the button on the admin page
-        - there's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
+  1. Open up `database\migrations.js`
+  1. find the end of the `migrations` array
+  1. add a new object, following the pattern of the existing migrations, i.e.
+     - `name` - unique identifier for the migration
+     - `description` - talk about what your changes do
+     - `doMigration` - a function that returns a promise (or other thenable object) that enacts the data manipulation to achieve what you want to do
+  1. test your migration by using the button on the admin page
+     - there's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
 
