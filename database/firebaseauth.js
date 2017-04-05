@@ -12,9 +12,9 @@
 	firebase.auth().onAuthStateChanged(function(user) {
 		if (user) {
 			// User is signed in.
-			firebase.database().ref("admins").once('value').then(function(adminSnapshot){
+			firebase.database().ref("admins/" + user.uid).once('value').then(function(adminSnapshot){
 				var admins = adminSnapshot.val();
-				if (admins.find(function(admin){return admin==user.uid}) !== undefined){
+				if (admins !== null){
 					showElement(adminButton);
 				}
 			});
