@@ -1,13 +1,17 @@
 dist: trusty
 sudo: false
-language: python
+language: ruby
 python:
   - "3.6"
-install: pip install -r ci/requirements.txt
-script: ci/html5validate.sh
+install: ci/install.sh
+script: ci/all.sh
+gemfile: ci/Gemfile
 addons:
   apt:
     packages:
     # install Java 8 as required by vnu.jar
     - oracle-java8-installer
     - oracle-java8-set-default
+cache:
+  bundler: true
+  pip: true
