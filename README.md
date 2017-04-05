@@ -86,9 +86,9 @@ To develop with the database:
   1. Open up `database\migrations.js`
   1. find the end of the `migrations` array
   1. add a new object, following the pattern of the existing migrations, i.e.
-    - `name` - unique identifier for the migration
-    - `description` - talk about what your changes do
-    - `doMigration` - a function that returns a promise (or other thenable object) that enacts the data manipulation to achieve what you want to do
+     - `name` - unique identifier for the migration
+     - `description` - talk about what your changes do
+     - `doMigration` - a function that returns a promise (or other thenable object) that enacts the data manipulation to achieve what you want to do
   1. test your migration by using the button on the admin page
-    - there's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
+     - there's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
 
