@@ -24,8 +24,8 @@
 			hideElement(signedOutNav);
 		} else {
 			userSpan.innerHTML = "";
-			showElement(signedInNav);
-			hideElement(signedOutNav);
+			showElement(signedOutNav);
+			hideElement(signedInNav);
 			hideElement(adminButton);
 		}
 	});
