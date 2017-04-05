@@ -57,7 +57,9 @@
 
 		if (migrations.length === 0){
 			li = document.createElement("li");
-			li.appendChild(document.createTextNode("No Migrations"));
+			descriptionSpan = document.createElement("span");
+			descriptionSpan.appendChild(document.createTextNode("No Migrations"));
+			li.appendChild(descriptionSpan);
 			listElement.appendChild(li);
 		}
 		else{
@@ -67,14 +69,14 @@
 				nameSpan = document.createElement("span");
 				nameSpan.appendChild(document.createTextNode(migration.name));
 				li.appendChild(nameSpan);
-				descriptionSpan = document.createElement("span");
-				descriptionSpan.appendChild(document.createTextNode(migration.description));
-				li.appendChild(descriptionSpan);
 				if(migration.timestamp !== undefined){
 					timestampSpan = document.createElement("span");
 					timestampSpan.appendChild(document.createTextNode(migration.timestamp));
 					li.appendChild(timestampSpan);
 				}
+				descriptionSpan = document.createElement("span");
+				descriptionSpan.appendChild(document.createTextNode(migration.description));
+				li.appendChild(descriptionSpan);
 				listElement.appendChild(li);
 			}
 		}
