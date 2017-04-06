@@ -1,0 +1,58 @@
+﻿body {
+    background: #000;
+    margin: 0;
+	text-align: center;
+}
+
+.game-board-window {
+	width: 600px;
+	height: 300px;
+	background-color: #000;
+	margin: auto auto;
+	border: 1px dashed #0f0;
+	position:relative;
+}
+
+.game-board {
+	width: 600px;
+	height: 300px;
+}
+
+.controls {
+    color: #FFF;
+    position: absolute;
+    z-index: 1
+}
+
+.action {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	color: #fff;
+	font-size: 21px;
+	text-align: center;
+	animation: fadein 1s;
+	opacity: 0;
+	text-shadow: 3px 3px 2px rgba(0,0,0,0.8), -3px 3px 2px rgba(0,0,0,0.8), 3px -3px 2px rgba(0,0,0,0.8), -3px -3px 2px rgba(0,0,0,0.8);
+	line-height: normal;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+		margin-top: 40px;
+	}
+
+	25% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
