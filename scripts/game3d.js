@@ -42,6 +42,9 @@
 
 		Planes 0 and 1 are the floor and ceiling.
 	*/
+	/*
+
+	// Donut Hallways Map
 
     Planes: [
         {  // Ground
@@ -134,6 +137,83 @@
 			],
             Color: 'rgb(99,9,9)'
         }
+    ]*/
+
+	// Donut, mimicks 2D game
+
+    Planes: [
+        {
+            Vertices: [
+                [0, 0, 3],
+                [0, 0, 2],
+                [1, 0, 2],
+                [1, 0, 3]
+            ],
+            Color: '#888'
+        },
+        {
+            Vertices: [
+                [0, 0, 2],
+                [0, 0, 1],
+                [1, 0, 1],
+                [1, 0, 2]
+            ],
+            Color: '#0FF'
+        },
+        {
+            Vertices: [
+                [0, 0, 1],
+                [0, 0, 0],
+                [1, 0, 0],
+                [1, 0, 1]
+            ],
+            Color: '#0F0'
+        },
+        {
+            Vertices: [
+                [1, 0, 0],
+                [1, 0, 1],
+                [2, 0, 1],
+                [2, 0, 0]
+            ],
+            Color: '#FFF'
+        },
+        {
+            Vertices: [
+                [2, 0, 0],
+                [2, 0, 1],
+                [3, 0, 1],
+                [3, 0, 0]
+            ],
+            Color: '#F0F'
+        },
+        {
+            Vertices: [
+                [2, 0, 1],
+                [2, 0, 2],
+                [3, 0, 2],
+                [3, 0, 1]
+            ],
+            Color: '#F00'
+        },
+        {
+            Vertices: [
+                [2, 0, 2],
+                [2, 0, 3],
+                [3, 0, 3],
+                [3, 0, 2]
+            ],
+            Color: '#00F'
+        },
+        {
+            Vertices: [
+                [1, 0, 2],
+                [1, 0, 3],
+                [2, 0, 3],
+                [2, 0, 2]
+            ],
+            Color: '#FF0'
+        },
     ]
 };
 
@@ -203,15 +283,16 @@ OnePRGame3d.Load = function () {
         let x2d = z3d == 0 && x3d > 0 ? OnePRGame3d.HalfWidth : z3d == 0 && x3d < 0 ? -OnePRGame3d.HalfWidth : (x3d * (OnePRGame3d.Camera.XFocalLength / z3d));
 
         if (z3d < 0) {
-            // Honestly, couldn't figure out how to calculate correct 2D x-coords
-            // for vertices behind the camera, but this works for this map.
-			// Coefficient would need to be larger on a larger map.
+			// Using this as a surrogate for proper 3D clipping.
+			// See: www.cubic.org/docs/3dclip.htm
             x2d = -6 * x2d;
         }
 
         let y2d = z3d == 0 && y3d > 0 ? OnePRGame3d.HalfHeight : z3d == 0 && y3d < 0 ? -OnePRGame3d.HalfHeight : (y3d * (OnePRGame3d.Camera.YFocalLength / z3d));
 
         if (z3d < 0) {
+			// Using this as a surrogate for proper 3D clipping.
+			// See: www.cubic.org/docs/3dclip.htm
             y2d = -6 * y2d;
         }
 
