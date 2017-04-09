@@ -1,9 +1,4 @@
-﻿/* Fonts */
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
-/* Use border-box sizing instead of the default (content-box)
+﻿/* Use border-box sizing instead of the default (content-box)
    This makes it so the width of an element includes its padding, instead of adding the padding on top of the element.
    More information on box-sizing here: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
 * {

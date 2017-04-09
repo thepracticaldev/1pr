@@ -1,4 +1,6 @@
-﻿var OnePRGame3d = {
+"use strict";
+
+var OnePRGame3d = {
     Camera: {
         Position: [0.5, 0.5, 2.5],
         Direction: Math.PI,
@@ -251,7 +253,7 @@ OnePRGame3d.Load = function () {
         let localPlane = {
             Vertices: [],
             Color: plane3d.Color
-        }
+        };
 
         for (let i = 0; i < plane3d.Vertices.length; i++) {
 
@@ -260,7 +262,7 @@ OnePRGame3d.Load = function () {
                 plane3d.Vertices[i][0] - OnePRGame3d.Camera.Position[0],
                 plane3d.Vertices[i][1] - OnePRGame3d.Camera.Position[1],
                 plane3d.Vertices[i][2] - OnePRGame3d.Camera.Position[2]
-            ]
+            ];
 
             // Camera direction modification
             vertex = rotatePointAroundCameraDirection(vertex);
@@ -280,7 +282,7 @@ OnePRGame3d.Load = function () {
         let z3d = point3d[2];
 
         // Projection
-        let x2d = z3d == 0 && x3d > 0 ? OnePRGame3d.HalfWidth : z3d == 0 && x3d < 0 ? -OnePRGame3d.HalfWidth : (x3d * (OnePRGame3d.Camera.XFocalLength / z3d));
+        let x2d = z3d === 0 && x3d > 0 ? OnePRGame3d.HalfWidth : z3d === 0 && x3d < 0 ? -OnePRGame3d.HalfWidth : (x3d * (OnePRGame3d.Camera.XFocalLength / z3d));
 
         if (z3d < 0) {
 			// Using this as a surrogate for proper 3D clipping.
@@ -288,7 +290,7 @@ OnePRGame3d.Load = function () {
             x2d = -6 * x2d;
         }
 
-        let y2d = z3d == 0 && y3d > 0 ? OnePRGame3d.HalfHeight : z3d == 0 && y3d < 0 ? -OnePRGame3d.HalfHeight : (y3d * (OnePRGame3d.Camera.YFocalLength / z3d));
+        let y2d = z3d === 0 && y3d > 0 ? OnePRGame3d.HalfHeight : z3d === 0 && y3d < 0 ? -OnePRGame3d.HalfHeight : (y3d * (OnePRGame3d.Camera.YFocalLength / z3d));
 
         if (z3d < 0) {
 			// Using this as a surrogate for proper 3D clipping.
@@ -310,7 +312,7 @@ OnePRGame3d.Load = function () {
 
         for (let i = 0; i < plane2d.Vertices.length; i++) {
 
-            if (i == 0) {
+            if (i === 0) {
                 OnePRGame3d.Context.moveTo.apply(OnePRGame3d.Context, plane2d.Vertices[i]);
             }
             else {
@@ -353,34 +355,34 @@ OnePRGame3d.Load = function () {
 
         let aX = null, bX = null, aZ = null, bZ = null;
         for (let i = 0; i < a.Vertices.length; i++) {
-            if (aX == null || Math.abs(a.Vertices[i][0]) < aX) {
+            if (aX === null || Math.abs(a.Vertices[i][0]) < aX) {
                 aX = Math.abs(a.Vertices[i][0]);
             }
 
-            if (a.Vertices[i][2] >= 0 && (aZ == null || a.Vertices[i][2] < aZ)) {
+            if (a.Vertices[i][2] >= 0 && (aZ === null || a.Vertices[i][2] < aZ)) {
                 aZ = a.Vertices[i][2];
             }
         }
 
         for (let i = 0; i < b.Vertices.length; i++) {
-            if (bX == null || Math.abs(b.Vertices[i][0]) < bX) {
+            if (bX === null || Math.abs(b.Vertices[i][0]) < bX) {
                 bX = Math.abs(b.Vertices[i][0]);
             }
 
-            if (b.Vertices[i][2] >= 0 && (bZ == null || b.Vertices[i][2] < bZ)) {
+            if (b.Vertices[i][2] >= 0 && (bZ === null || b.Vertices[i][2] < bZ)) {
                 bZ = b.Vertices[i][2];
             }
         }
 
-        return aZ == null && bZ == null ? 0
-            : aZ == null && bZ != null ? 1
-            : aZ != null && bZ == null ? -1
+        return aZ === null && bZ === null ? 0
+            : aZ === null && bZ !== null ? 1
+            : aZ !== null && bZ === null ? -1
 			: aZ < bZ ? 1
-			: aZ == bZ && aX < bX ? 1
-            : aZ == bZ && aX > bX ? 1
-            : aZ == bZ && aX == bX ? 0
+			: aZ === bZ && aX < bX ? 1
+            : aZ === bZ && aX > bX ? 1
+            : aZ === bZ && aX === bX ? 0
 			: -1;
-    };
+    }
 
     function render() {
 
@@ -430,7 +432,7 @@ OnePRGame3d.Load = function () {
 			let plane2d = {
                 Vertices: [],
                 Color: cameraRelative3DPlanes[i].Color
-			}
+			};
 
 			// Calculate 2D vertices
             for (let j = 0; j < cameraRelative3DPlanes[i].Vertices.length; j++) {
@@ -455,7 +457,7 @@ OnePRGame3d.Load = function () {
 
 	// This is the frame rate (1000/50 = 20 frames/sec)
 	// Mainstream games: 60 FPS is best, 30 FPS low.
-    var loop = setInterval(function () { render(); }, 50);
+    setInterval(function () { render(); }, 50);
 
 };
 
@@ -463,8 +465,8 @@ OnePRGame3d.MoveForward = function () {
     // Disable move button
     OnePRGame3d.Moving = true;
 
-    let isX = OnePRGame3d.Camera.Direction != Math.PI && OnePRGame3d.Camera.Direction != 0;
-    let isAdd = OnePRGame3d.Camera.Direction != Math.PI && OnePRGame3d.Camera.Direction != Math.PI / 2;
+    let isX = OnePRGame3d.Camera.Direction !== Math.PI && OnePRGame3d.Camera.Direction !== 0;
+    let isAdd = OnePRGame3d.Camera.Direction !== Math.PI && OnePRGame3d.Camera.Direction !== Math.PI / 2;
 
     let startPosition = parseFloat(OnePRGame3d.Camera.Position[isX ? 0 : 2]);
     let endPosition = startPosition + (isAdd ? 1 : -1);
@@ -475,11 +477,11 @@ OnePRGame3d.MoveForward = function () {
             clearInterval(intervalId);
 
             let actionText = 'COMMIT!';
-            if (endPosition == 0.5 || endPosition == 2.5) {
+            if (endPosition === 0.5 || endPosition === 2.5) {
                 OnePRGame3d.TurnLeft();
 
 				// if position = starting point, add 200 points.
-                if (OnePRGame3d.Camera.Position[0] == 0.5 && OnePRGame3d.Camera.Position[2] == 2.5) {
+                if (OnePRGame3d.Camera.Position[0] === 0.5 && OnePRGame3d.Camera.Position[2] === 2.5) {
                     document.getElementsByClassName('controls-score')[0].textContent =
                         parseInt(document.getElementsByClassName('controls-score')[0].textContent) + 200;
                     actionText = 'PULL REQUEST!';
@@ -500,7 +502,7 @@ OnePRGame3d.MoveForward = function () {
         else {
             OnePRGame3d.Camera.Position[isX ? 0 : 2] = (parseFloat(OnePRGame3d.Camera.Position[isX ? 0 : 2]) + (isAdd ? 0.05 : -0.05)).toPrecision(3);
         }
-    }
+    };
 
     let intervalId = setInterval(frame, 50);
 };
@@ -525,7 +527,7 @@ OnePRGame3d.TurnLeft = function () {
         else {
             OnePRGame3d.Camera.Direction = parseFloat(OnePRGame3d.Camera.Direction) + (Math.PI / 20);
         }
-    }
+    };
 
     let intervalId = setInterval(frame, 50);
 };
@@ -542,7 +544,7 @@ OnePRGame3d.LoadControls = function () {
 
     document.getElementsByClassName('controls-autoplay')[0].addEventListener('click', function () {
 
-        setInterval(function () { if (!OnePRGame3d.Moving) { document.getElementsByClassName('controls-move')[0].click() } }, 50);
+        setInterval(function () { if (!OnePRGame3d.Moving) { document.getElementsByClassName('controls-move')[0].click(); } }, 50);
 
     }, false);
 };
