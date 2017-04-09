@@ -1,4 +1,5 @@
 # 1pr
+
 I will be accepting up to one pull request per day on this project.
 
 View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.github.io/1pr/).
@@ -11,13 +12,14 @@ View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.githu
 - [1pr Day 3: Added styles and a project contributor list](https://dev.to/ben/1pr-day-3-added-styles-and-a-project-contributor-list)
 - [Having trouble integrating gitter into 1pr](https://dev.to/ben/having-trouble-integrating-gitter-into-1pr)
 
-
 ## How to contribute
+
 - Fork the repository
 - Add something awesome
 - Create a pull request
 - Hope you get picked
 
+## Coding standards
 
 ## Project structure
 The project's structure is pretty simple.
@@ -31,10 +33,12 @@ The project's structure is pretty simple.
 ## Coding standards
 When contributing, please try to follow the coding standards so we have nice looking code that's easy to follow for everyone.
 
-#### Editorconfig
+### Editorconfig
+
 Where possible, use an editor (or a plugin for your editor) that supports [editorconfig](http://editorconfig.org/).
 
 The editorconfig file should set your editor to the following settings automatically:
+
 - UTF-8 charset
 - Unix-style line breaks
 - End file with a new line
@@ -43,11 +47,13 @@ The editorconfig file should set your editor to the following settings automatic
 
 Tab width is not defined in the editorconfig, so each deveveloper can set their editor's tab width to what they're most comfortable with.
 
-#### Furthermore:
+### Furthermore
+
 - Add comments to your code where necessary. The project should be accessible for devs of all experience and skill levels. Better to have too many comments, than none at all.
 - Whitespace is not the enemy! A couple of empty lines between blocks of code can really improve readability.
 
-#### For Javascript specifically:
+### For Javascript specifically
+
 - Use semicolons (even through they're not strictly necessary). It's good practice!
 - Use `let` and `const` where applicable, to keep the scope of your variables specific. Don't know what scope is or what `let` does? Check out [this article](https://medium.com/@MentallyFriendly/es6-an-idiots-guide-to-let-and-const-70be9691c389).
 - Use `lowerCamelCase` for variable names (not `snake_case`)

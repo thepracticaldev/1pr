@@ -1,4 +1,4 @@
-/* Fonts */
+﻿/* Fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
@@ -93,6 +93,12 @@ main {
 	text-align: center;
 }
 
+/* Pull Request Voting elements */
+#pull-requests-container p {
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
 
 /* Contributor elements */
 #contributors-container {
@@ -285,6 +291,12 @@ pr-badge a:focus::after  {
     bottom: 0px;
     width: 200px;
     background-color: #524c4c;
+	opacity: 1;
+	transition: all 250ms ease-out;
+}
+#sidebar.closed {
+	left: -200px;
+	opacity: 0.75;
 }
 
 #sidebar ul {
@@ -318,20 +330,17 @@ pr-badge a:focus::after  {
 
 
 @media screen and (max-width: 480px) {
-    #banner h1 {
-	    padding-top: 30px;
-	    padding-bottom: 15px;
-    }
+	#banner h1 {
+		padding-top: 30px;
+		padding-bottom: 15px;
+	}
+
+	#pull-requests-container p {
+		width: 100%;
+	}
 
     footer {
 	    display: none;
-	}
-}
-
-/* Min-width break to add more padding on wider screens */
-@media all and (max-width: 720px) {
-	#sidebar {
-		display: none;
 	}
 }
 
@@ -352,5 +361,10 @@ pr-badge a:focus::after  {
 
 	#menu-button {
 		display: none;
+	}
+
+	#sidebar.closed {
+		left: 0px;
+		opacity: 1;
 	}
 }

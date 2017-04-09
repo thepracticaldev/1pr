@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
@@ -6,12 +6,13 @@
 		<title>One PR A Day</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
-		<link rel="stylesheet" type="text/css" href="vendor/gitter.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/gitter.css">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	</head>
 
 	<body>
-
 
 		<nav>
 			<a class="logo" href="https://thepracticaldev.github.io/1pr/">
@@ -38,13 +39,13 @@
 
 		<div id="main-content">
 
-			<div id="sidebar">
+			<div id="sidebar" class="closed">
 				<ul>
 				  <li>
-					  <a href="#">First Page</a>
+					  <a href="game.html">Would you like to play a game?</a>
 				  </li>
 				  <li>
-					  <a href="#">Second Page</a>
+					  <a href="http://try.github.io" target="_blank">Try Git</a>
 				  </li>
 				  <li>
 					  <a href="#">Third Page</a>
@@ -79,6 +80,9 @@
 						<li>Find some inspiration for cool ideas on what you can add to the project <a target="_blank" href="https://medium.freecodecamp.com/6-absurd-ideas-for-building-your-first-web-application-24afca35e519#.do2wbrk4s">from this medium post</a></li>
 					</ul>
 
+					<p>Check out what pull requests are up for selection:</p>
+					<div id="pull-requests-container"></div>
+
 				</main>
 
 				<div id="contributors-container">
@@ -105,7 +109,7 @@
 		</footer>
 
 		<!-- Gitter script -->
-		<script src="vendor/sidecar.v1.js" async defer></script>
+		<script src="scripts/sidecar.v1.js" async defer></script>
 
 		<!-- Custom Scripts -->
 		<script src="scripts/main.js"></script>
@@ -114,13 +118,14 @@
 		<script src="scripts/api.js"></script>
 
 		<!-- Asynchronously load the other scripts -->
+		<script src="scripts/vote.js" async></script>
 		<script src="scripts/contributors.js" async></script>
 		<script src="scripts/pr.js" async></script>
 
 		<!-- GH buttons script -->
 		<script async defer src="https://buttons.github.io/buttons.js"></script>
 
-
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
 	</body>
 
 </html>
