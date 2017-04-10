@@ -60,6 +60,7 @@
 
 	// Load last merged PR
 	window.api('https://api.github.com/repos/thepracticaldev/1pr/pulls?state=closed', function(err, pr_list) {
+	window.api('https://api.github.com/repos/thepracticaldev/1pr/pulls?state=closed&sort=updated&direction=desc', function(err, pr_list) {
 
 		if(err) {
 			if(window.console){ window.console.error(err); }
