@@ -1,0 +1,8 @@
+/* Hide gitter button until the page is loaded */
+body .gitter-open-chat-button {
+	bottom: -50px;
+	transition: bottom 120ms ease-out;
+}
+.loaded .gitter-open-chat-button {
+	bottom: 0;
+}

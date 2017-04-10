@@ -10,11 +10,12 @@ body {
 	margin: 0;
 	padding-bottom: 60px;
 
+	background: #1F2539;
+	color: white;
+
 	font-size: 16px;
 	font-weight: 400;
-	/* Use Google Fonts but fallback to system font using this clever line
-	   that targets the standard fonts of most popular operating systems */
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 strong {
@@ -24,15 +25,17 @@ strong {
 h1,
 h2,
 h3,
-h4,
-label {
-	font-family: 'Patua One', -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+h4 {
+	text-align: center;
+	font-family: 'Patua One', sans-serif;
 	font-weight: 400;
 }
 
-a,
-a:link,
-a:visited {
+h1 {
+	margin-bottom: 30px;
+}
+
+a {
 	display: inline-block;
 	color: #2980b9;
 	text-decoration: none;
@@ -45,35 +48,397 @@ a:focus {
 
 
 
-/* Use an ::after pseudo-element for link underlining to avoid having thick lines under large/bold text
-   This can possibly be used later on for a simple hover effect/transition */
-a::after {
-	display: block;
-	content: '';
+/* Basic elements */
+.container {
 	width: 100%;
-	height: 1px;
+	max-width: 960px;
 	margin: auto;
-	margin-top: -4px;
+}
+
+.panel {
+	display: block;
+	padding: 50px 10px;
+
+	background: white;
+	color: #333;
+
+	opacity: 0;
+	transform: translateY(-20px);
+	transition: all 320ms ease-out;
+}
+body.loaded .panel {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+
+/* Header */
+header {
+	height: 100px;
+	background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
+}
+
+header .container {
+	display: flex;
+	align-items: flex-start;
+}
+
+header .fill {
+	flex-grow: 1;
+}
+
+header nav {
+	display: flex;
+	align-items: center;
+	padding: 0 5px;
+}
+
+header a {
+	display: block;
+	padding: 15px;
+	color: rgba(255, 255, 255, 0.75);
+}
+header nav a {
+	padding: 15px 10px;
+}
+header a:hover,
+header a:focus {
+	color: white;
+}
+
+header a svg {
+	display: block;
+	height: 24px;
+	width: 24px;
+}
+header a path {
+	fill: rgba(255, 255, 255, 0.75);
+	transition: all 80ms ease-in-out;
+}
+header a:hover path {
+	fill: white;
+}
+
+
+
+
+/* PR counter */
+#pr-counter {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	width: 220px;
+	height: 220px;
+	margin: auto;
+	margin-bottom: 50px;
+	padding-bottom: 20px;
+}
+
+#loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+#pr-counter .info {
+	opacity: 0;
+	transform: scale(0.8);
+	transition: all 240ms ease-out;
+}
+body.loaded #pr-counter .info {
+	opacity: 1;
+	transform: scale(1);
+}
+
+#pr-count {
+	font-size: 4em;
+	text-align: center;
+}
+#pr-counter .label {
+	margin-top: -12px;
+
+	color: rgba(255, 255, 255, 0.8);
+
+	font-size: 0.8em;
+	text-align: center;
+}
+
+
+
+
+/* Last PR */
+#last-pr {
+	opacity: 0;
+	transition: all 320ms ease-out;
+
+	min-height: 100px;
+	padding: 10px;
+	padding-top: 40px;
+
+	background: linear-gradient(to top, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%);
+	text-align: center;
+}
+body.loaded #last-pr {
+	opacity: 1;
+}
+
+#last-pr.error {
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+#last-pr p {
+	margin: 5px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+#last-pr span {
+	white-space: nowrap;
+}
+
+
+
+
+/* Intro */
+#intro {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+
+	padding: 10px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+
+#intro p {
+	width: 100%;
+}
+
+#intro .block {
+	flex-basis: 250px;
+	flex-grow: 1;
+
+	margin: 0 10px;
+	margin-top: 28px;
+	padding: 0 10px;
+
+	border: 2px solid rgba(128, 128, 128, 0.2);
+	border-radius: 6px;
+
+	text-align: left;
+}
+
+#intro ul {
+	padding-left: 25px;
+}
+
+#intro .icon {
+	display: block;
+	width: 60px;
+	height: 38px;
+	margin: auto;
+	margin-bottom: -20px;
+
+	position: relative;
+	top: -20px;
+
+	padding: 0 8px;
 	background: white;
 }
 
-/* Adjust the underline spacing slightly for larger text */
-
-h1 a:hover::after,
-h1 a:focus::after {
-	margin-top: -6px;
-}
-
-h2 a:hover::after,
-h2 a:focus::after {
-	margin-top: -5px;
+#intro .icon path {
+	fill: rgb(128, 128, 128);
 }
 
 
-/* Structural */
+
+
+/* Repository info & stats */
+#repo-info {
+	opacity: 0;
+	transition: all 480ms ease-out;
+
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	padding: 40px 10px;
+}
+body.loaded #repo-info {
+	opacity: 1;
+}
+
+#repo-info h2 {
+	width: 80%;
+	margin-top: 30px;
+	padding-top: 40px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#contributors {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	width: 100%;
+}
+
+#contributors a {
+	display: inline-block;
+	margin: 2px 0;
+}
+
+#contributors img {
+	height: 42px;
+	width: 42px;
+	margin: 5px;
+	border-radius: 50%;
+	transition: all 80ms ease-in-out;
+}
+
+#contributors a:hover img, #contributors a:focus img {
+	transform: scale(1.1);
+}
+
+
+#repo-info .block {
+	flex-basis: 100%;
+	flex-grow: 1;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 5px;
+}
+
+#repo-info svg {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+}
+#repo-info path {
+	fill: rgba(255, 255, 255, 0.6);
+}
+
+#stars .data::after {
+	content: ' stars';
+}
+#issues .data::after {
+	content: ' issues';
+}
+#forks .data::after {
+	content: ' forks';
+}
+
+
+/* Pull Request Voting elements */
+#pull-requests-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+
+	padding: 10px;
+	padding-top: 15px;
+}
+
+#pull-requests-container p {
+	width: 100%;
+	margin: 0;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+#pull-requests-container p:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+
+
+/* Games list */
+#games {
+	opacity: 0;
+	transition: all 480ms ease-out;
+
+	padding: 40px 0;
+	text-align: center;
+}
+body.loaded #games {
+	opacity: 1;
+}
+
+#games a {
+	display: inline-block;
+	padding: 12px 22px;
+	margin: 0 4px;
+
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 6px;
+	color: #333;
+}
+#games a:hover, #games a:focus {
+	background: white;
+	color: #333;
+}
+
+
+
+
+/* It is recommended to always work mobile-first (i.e. design the base css for mobile), and use 'min-width' media queries to adapt the display for larger monitors */
+@media all and (min-width: 480px) {
+
+	.container {
+		width: 90%;
+	}
+
+	#pr-counter {
+		margin-top: 25px;
+		margin-bottom: 75px;
+	}
+
+	#repo-info .block {
+		flex-basis: 30%;
+	}
+
+}
+
+@media all and (min-width: 720px) {
+
+	.container {
+		width: 85%;
+	}
+
+	#pr-counter {
+		margin-top: 50px;
+		margin-bottom: 100px;
+	}
+
+	#pull-requests-container p {
+		width: 46%;
+	}
+
+}
+
+
+
+
+/* Structural *
 main {
 	/* For browsers that don't know <main> element (e.g. IE11)
-	   This renders it as a block element so it doesn't screw up styling */
+	   Renders it as a block element so it doesn't screw up styling *
 	display: block;
 	width: 80vw;
 	max-width: 1100px;
@@ -88,14 +453,8 @@ main {
 	text-align: center;
 }
 
-/* Pull Request Voting elements */
-#pull-requests-container p {
-	display: inline-block;
-	width: 49%;
-	vertical-align: top;
-}
 
-/* Contributor elements */
+/* Contributor elements *
 #contributors-container {
 	display: none;
 
@@ -122,32 +481,10 @@ main {
 	font-style: italic;
 }
 
-#contributors > a {
-	display: inline-block;
-	margin: 2px 0;
-}
-
-/* Hide the link underline */
-#contributors > a::after {
-	display: none;
-}
-
-#contributors img {
-	height: 42px;
-	width: 42px;
-	margin-right: 10px;
-	border-radius: 50%;
-	transition: all 80ms ease-in-out;
-}
-
-#contributors a:hover img, #contributors a:focus img {
-	transform: scale(1.1);
-}
-
-
+*/
 
 /*Floating nav bar*/
-nav {
+/*nav {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -203,12 +540,11 @@ nav .fill {
 }
 
 nav .fa-lg {
-    font-size: 1.7em;
-}
-
+	font-size: 1.7em;
+}*/
 
 /* PR listings */
-#pr-container {
+/*#pr-container {
 	display: none;
 	text-align: center;
 }
@@ -220,18 +556,16 @@ nav .fa-lg {
 #pr-container p {
 	margin: 5px;
 	font-size: 0.9em;
-}
-
-
+}*/
 
 /* Floating footer */
-footer {
+/*footer {
 	position: fixed;
 	bottom: 0;
 	left: 0;
 
 	display: flex;
-	/*justify-content: flex-end;*/
+	/*justify-content: flex-end;*
 	align-items: center;
 
 	width: 100%;
@@ -242,11 +576,9 @@ footer {
 
 	background-color: #333;
 	text-align: right;
-}
+}*/
 
-/* Hide the links while the button script is loading */
-
-footer a:link,
+/*footer a:link,
 footer a:visited {
 	color: #333;
 }
@@ -271,21 +603,21 @@ pr-badge a:visited,
 pr-badge a:hover,
 pr-badge a:active
 pr-badge a:hover::after,
-pr-badge a:focus::after  {
-    text-decoration: none;
+pr-badge a:focus::after {
+	text-decoration: none;
 }
 
 #menu-button {
 	margin-right: 15px;
-}
+}*/
 
-#sidebar {
-    position: fixed;
-    top: 52px;
-    left: 0px;
-    bottom: 0px;
-    width: 200px;
-    background-color: #524c4c;
+/*#sidebar {
+	position: fixed;
+	top: 52px;
+	left: 0px;
+	bottom: 0px;
+	width: 200px;
+	background-color: #524c4c;
 	opacity: 1;
 	transition: all 250ms ease-out;
 }
@@ -295,36 +627,34 @@ pr-badge a:focus::after  {
 }
 
 #sidebar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 200px;
 }
 
 #sidebar li a,
 #sidebar li a:visited {
-    display: block;
-    padding: 10px 16px;
-    color: #fff;
-    text-decoration: none;
+	display: block;
+	padding: 10px 16px;
+	color: #fff;
+	text-decoration: none;
 }
 
 #sidebar li a:hover {
-    color: #fff;
-    background-color: #555;
+	color: #fff;
+	background-color: #555;
 }
 
 #sidebar li a::after {
-    background: none;
-}
-
+	background: none;
+}*/
+/*
 #main-content {
-    margin-top: 50px;
-    background-color: #fff;
-}
+	margin-top: 50px;
+}*/
 
-
-@media screen and (max-width: 480px) {
+/*@media screen and (max-width: 480px) {
 	#banner h1 {
 		padding-top: 30px;
 		padding-bottom: 15px;
@@ -334,32 +664,7 @@ pr-badge a:focus::after  {
 		width: 100%;
 	}
 
-    footer {
-	    display: none;
-	}
-}
-
-/* Min-width break to add more padding on wider screens */
-@media all and (min-width: 720px) {
-	main {
-		padding: 50px;
-	}
-
-	#pr-container {
-		padding-top: 80px;
-		margin-bottom: -100px;
-	}
-
-	#main-content {
-	    margin-left: 200px;
-	}
-
-	#menu-button {
+	footer {
 		display: none;
 	}
-
-	#sidebar.closed {
-		left: 0px;
-		opacity: 1;
-	}
-}
+}*/
