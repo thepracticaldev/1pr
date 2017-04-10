@@ -1,9 +1,4 @@
-﻿/* Fonts */
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600|Patua+One');
-@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
-/* Use border-box sizing instead of the default (content-box)
+﻿/* Use border-box sizing instead of the default (content-box)
    This makes it so the width of an element includes its padding, instead of adding the padding on top of the element.
    More information on box-sizing here: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
 * {
@@ -38,16 +33,14 @@ label {
 a,
 a:link,
 a:visited {
-
 	display: inline-block;
 	color: #2980b9;
-	text-decoration: none !important;
+	text-decoration: none;
 }
 
 a:hover,
 a:focus {
 	color: #3498db;
-	text-decoration: none !important;
 }
 
 
@@ -322,7 +315,7 @@ pr-badge a:focus::after  {
 }
 
 #sidebar li a::after {
-    background: none !important;
+    background: none;
 }
 
 #main-content {

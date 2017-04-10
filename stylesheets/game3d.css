@@ -37,6 +37,10 @@
 	line-height: normal;
 }
 
+.stone-bricks {
+	display: none;
+}
+
 @keyframes fadein {
 	0% {
 		opacity: 0;

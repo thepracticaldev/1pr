@@ -1,14 +1,16 @@
+'use strict';
+
 // Wrap everything inside a scoped function
 (function loadContributors() {
 
 	// Helper function; shorthand for document.getElementById (because that gets pretty annoying if you have to write it a bunch)
-	let el = function(id) { return document.getElementById(id); }
+	let el = function(id) { return document.getElementById(id); };
 
 	window.api('https://api.github.com/repos/thepracticaldev/1pr/contributors', function(err, contributors){
 
 		// Log and display any errors
 		if(err !== null){
-			console.error(err);
+			if(window.console){ window.console.error(err); }
 			el('contributors').className = 'error';
 			el('contributors').textContent = 'Could not load contributors';
 			return;

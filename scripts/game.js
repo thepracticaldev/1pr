@@ -1,4 +1,6 @@
-﻿var OnePRGame = {
+"use strict";
+
+var OnePRGame = {
 	// Map is a set of rows, each row has a set of tiles.
     Map: [{
         Row: [

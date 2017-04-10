@@ -1,19 +1,32 @@
+'use strict';
+
 
 ((window.gitter = {}).chat = {}).options = {
   room: 'thepracticaldev/1pr',
   useStyles: false
 };
 
-function toggleSidebar(){
-	sidebar = document.getElementById("sidebar");
-	if (sidebar.className == 'closed') {
-		sidebar.className = 'open';
+(function() {
 
-	} else if (sidebar.className == 'open') {
-		sidebar.className = 'closed';
+	// Toggles the sidebar display on mobile
+	let toggleSidebar = function() {
 
-	} else {
-		sidebar.className = 'open';
+		// Get sidebar element
+		let sidebar = document.getElementById("sidebar");
 
-	}
-}
+
+		if (sidebar.style.display === 'none') {
+			sidebar.style.display = 'block';
+
+		} else if(sidebar.style.display === 'block') {
+			sidebar.style.display = 'none';
+
+		} else {
+			sidebar.style.display = 'block';
+
+		}
+	};
+
+	// Attach event listener to menu button
+	document.getElementById('menu-button').addEventListener('click', toggleSidebar, false);
+})();
