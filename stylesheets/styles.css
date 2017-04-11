@@ -211,6 +211,7 @@ header .logo path {
 }
 #body-container.sidebar-open {
 	transform: translateX(-100px);
+	overflow-y: hidden;
 }
 
 
