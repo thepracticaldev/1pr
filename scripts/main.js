@@ -36,4 +36,6 @@
 	document.getElementById('sidebar-close').addEventListener('click', sidebar.close, false);
 	document.getElementById('sidebar-overlay').addEventListener('click', sidebar.close, false);
 
+	document.getElementById('sidebar-toggle').style.display = 'block';
+
 })();

@@ -129,6 +129,9 @@ header .logo path {
 
 
 /* Sidebar menu */
+#sidebar-toggle {
+	display: none;
+}
 #sidebar {
 	position: fixed;
 	right: -400px;
