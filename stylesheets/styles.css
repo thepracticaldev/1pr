@@ -172,7 +172,7 @@ header .logo path {
 #sidebar nav {
 	width: 90%;
 	margin: auto;
-	margin-top: 64px;
+	margin-top: 72px;
 	margin-bottom: 24px;
 
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -212,7 +212,7 @@ header .logo path {
 	transition: all 280ms ease-out;
 }
 #body-container.sidebar-open {
-	transform: translateX(-100px);
+	transform: translateX(-72px);
 	overflow-y: hidden;
 }
 
