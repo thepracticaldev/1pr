@@ -83,6 +83,7 @@ body.loaded .panel {
 /* Header */
 header {
 	height: 100px;
+	padding-top: 10px;
 	background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
 }
 
@@ -153,7 +154,8 @@ header .logo path {
 #sidebar-close {
 	display: block;
 	float: right;
-	padding: 12px;
+	padding: 15px;
+	margin: 5px;
 }
 #sidebar-close svg {
 	display: block;
