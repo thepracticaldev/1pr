@@ -6,27 +6,36 @@
   useStyles: false
 };
 
+
 (function() {
 
-	// Toggles the sidebar display on mobile
-	let toggleSidebar = function() {
-
-		// Get sidebar element
-		let sidebar = document.getElementById("sidebar");
-
-
-		if (sidebar.style.display === 'none') {
-			sidebar.style.display = 'block';
-
-		} else if(sidebar.style.display === 'block') {
-			sidebar.style.display = 'none';
-
-		} else {
-			sidebar.style.display = 'block';
-
+	let sidebar = {
+		isOpen: false,
+		toggle: function() {
+			if(sidebar.isOpen){
+				sidebar.close();
+			}else{
+				sidebar.open();
+			}
+		},
+		open: function() {
+			sidebar.isOpen = true;
+			document.getElementById('sidebar').className = 'open';
+			document.getElementById('sidebar-overlay').className = 'open';
+			document.getElementById('body-container').className = 'sidebar-open';
+		},
+		close: function() {
+			sidebar.isOpen = false;
+			document.getElementById('sidebar').className = '';
+			document.getElementById('sidebar-overlay').className = '';
+			document.getElementById('body-container').className = '';
 		}
 	};
 
-	// Attach event listener to menu button
-	document.getElementById('menu-button').addEventListener('click', toggleSidebar, false);
+	document.getElementById('sidebar-toggle').addEventListener('click', sidebar.toggle, false);
+	document.getElementById('sidebar-close').addEventListener('click', sidebar.close, false);
+	document.getElementById('sidebar-overlay').addEventListener('click', sidebar.close, false);
+
+	document.getElementById('sidebar-toggle').style.display = 'block';
+
 })();
