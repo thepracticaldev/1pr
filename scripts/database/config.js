@@ -1,3 +1,6 @@
+/* globals firebase */
+"use strict";
+
 //Please overide this with the config for your test firebase project
 var config = {
 	apiKey: "AIzaSyBTsOTB3XvmDdU6RcO1DlOOV-govpkDs4E",
@@ -7,4 +10,3 @@ var config = {
 	messagingSenderId: "240320654850"
 };
 firebase.initializeApp(config);
-console.log("configured firebase");

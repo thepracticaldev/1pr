@@ -16,3 +16,9 @@ trim_trailing_whitespace = true
 # Tab indentation without specified width
 # This allows each dev to set the tab width in their IDE to whatever they like best
 indent_style = tab
+
+
+# Special markup for yml files
+[*.yml]
+indent_style = space
+indent_size = 2

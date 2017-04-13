@@ -1,11 +1,13 @@
+/* globals firebase, console */
+"use strict";
+
 (function prepareMigrations(){
 
 	var migrationButton = document.getElementById("button-migrate");
 	var appliedMigrationsList = document.getElementById("ul-migrations-applied");
 	var availableMigrationsList = document.getElementById("ul-migrations-available");
 
-	var self = this;
-	self.migrationHistory = [];
+	var self = {};
 	self.appliedMigrations = [];
 	self.availableMigrations = [];
 	const migrationHistoryRefName = "migrationHistory";
@@ -32,12 +34,22 @@
 				return Promise.resolve();
 			}
 		},
+		{
+			name: "Test",
+			description: "Added migration system.  Requires 'admins' node defined in database populated with an array of user ids",
+			doMigration: function(){
+				//Don't need to do anything explicitly.
+				// migrationHistoryRef gets created when the first history item (this one) gets pushed
+				//Still need to return a thenable object
+				return Promise.resolve();
+			}
+		},
 	];
 
 	var applyMigration = function(migration){
-		console.log("Applying migration", migration.name)
+		console.log("Applying migration", migration.name);
 		return migration.doMigration().then(function(){
-			console.log("Applied migration", migration.name)
+			console.log("Applied migration", migration.name);
 			//Strip out function definition when pushing to database but add timestamp for reference
 			migrationHistoryRef.push().set({
 				name: migration.name,
@@ -45,7 +57,7 @@
 				timestamp: new Date().toUTCString()
 			});
 		});
-	}
+	};
 
 	var populateMigrationList = function(listElement, migrations){
 		var migration = {};
@@ -80,17 +92,16 @@
 				listElement.appendChild(li);
 			}
 		}
-
-	}
+	};
 
 	migrationHistoryRef.on("value", function(migrationHistorySnapshot){
 		var migration = {};
 		var migrationHistoryItem = {};
 		var found = false;
 		//Handle no migration history node
-		self.migrationHistory = migrationHistorySnapshot.val()
-		if (self.migrationHistory === null){
-			self.migrationHistory = {};
+		var migrationHistory = migrationHistorySnapshot.val();
+		if (migrationHistory === null){
+			migrationHistory = {};
 		}
 
 		//Work out which of the above migrations are applied or waiting to be applied
@@ -100,9 +111,9 @@
 		for (var i = 0; i < migrations.length ; i++){
 			migration = migrations[i];
 			found = false;
-			for(var k in self.migrationHistory)
+			for(var k in migrationHistory)
 			{
-				migrationHistoryItem = self.migrationHistory[k];
+				migrationHistoryItem = migrationHistory[k];
 				if (migrationHistoryItem.name === migration.name)
 				{
 					self.appliedMigrations.push(migrationHistoryItem);
@@ -130,7 +141,7 @@
 		populateMigrationList(availableMigrationsList, self.availableMigrations);
 
 		//Refresh the apply migration click handler so it applys only the required migrations
-		migrationButton.onclick = function(mouseEvent){
+		migrationButton.onclick = function(){
 			//Empty promise to begin promise chain
 			var promise = Promise.resolve();
 			for (var i = 0; i < self.availableMigrations.length ; i++){

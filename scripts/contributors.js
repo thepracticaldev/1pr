@@ -1,16 +1,14 @@
-// Wrap everything inside a scoped function
-(function loadContributors() {
+'use strict';
 
-	// Helper function; shorthand for document.getElementById (because that gets pretty annoying if you have to write it a bunch)
-	let el = function(id) { return document.getElementById(id); }
+(function loadContributors() {
 
 	window.api('https://api.github.com/repos/thepracticaldev/1pr/contributors', function(err, contributors){
 
 		// Log and display any errors
 		if(err !== null){
-			console.error(err);
-			el('contributors').className = 'error';
-			el('contributors').textContent = 'Could not load contributors';
+			if(window.console){ window.console.error(err); }
+			document.getElementById('contributors').className = 'error';
+			document.getElementById('contributors').textContent = 'Could not load contributors';
 			return;
 		}
 
@@ -30,11 +28,9 @@
 
 			// Append to contributors element
 			contributor.appendChild(avatar);
-			el('contributors').appendChild(contributor);
+			document.getElementById('contributors').appendChild(contributor);
 
 		}
-
-		el('contributors-container').style.display = 'block';
 
 	});
 

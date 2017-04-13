@@ -1,0 +1,2 @@
+--errors=empty-rules,duplicate-properties,regex-selectors
+--warnings=floats,font-sizes,important,known-properties,outline-none,shorthand,overqualified-elements

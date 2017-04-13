@@ -21,6 +21,16 @@ View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.githu
 
 ## Coding standards
 
+## Project structure
+The project's structure is pretty simple.
+
+- HTML files go in the root directory
+- CSS goes in the `stylesheets/` directory
+- Javascript goes in the `scripts/` directory
+- Third-party libraries (CSS and JS) go in the `vendor/` directory, which is ignored by the linters (see **Testing** below).
+
+
+## Coding standards
 When contributing, please try to follow the coding standards so we have nice looking code that's easy to follow for everyone.
 
 ### Editorconfig
@@ -48,6 +58,75 @@ Tab width is not defined in the editorconfig, so each deveveloper can set their 
 - Use `let` and `const` where applicable, to keep the scope of your variables specific. Don't know what scope is or what `let` does? Check out [this article](https://medium.com/@MentallyFriendly/es6-an-idiots-guide-to-let-and-const-70be9691c389).
 - Use `lowerCamelCase` for variable names (not `snake_case`)
 
+## Testing
+The project contains the files `.htmlhintrc`, `.csslintrc` and `.jshintrc` with configuration for the respective testing utilities.
+
+To install the testing utilities locally, simply install [Node.js](https://nodejs.org/en/) and then use npm (bundled with Node.js) to install the utilities:
+
+```Bash
+# HTML validation
+npm install --global htmlhint
+
+# CSS linter
+npm install --global csslint
+
+# JSHint
+npm install --global jshint
+```
+
+
+#### HTML validation
+
+Run the HTML validator with:
+```
+htmlhint
+```
+
+- All tags should be lowercase
+- Use double quotes for attributes
+- No duplicate attributes
+- HTML5 doctype on the first line
+- Must have a title tag
+- IDs must be unique
+- Src and alt attribute required on images
+- No scripts in the head (place them at the bottom of the body)
+- No inline style attributes or javascript event handlers (e.g. `onclick=""`)
+
+
+#### CSS validation
+
+Run the CSS validator with:
+```
+csslint stylesheets
+```
+
+- No empty rules
+- No duplicate properties with the same value
+- Limit the amount of floats used
+- Limit the amount of different font sizes used
+- Don't use `!important`
+- Don't use `outline: none` unless you have a `:focus` rule on the same element to replace the outline
+- Don't use elements in the css when only a class name will suffice
+- Don't use regex selectors
+- Encourage the use of shorthand notation
+
+
+#### JS validation
+
+Run the Javascript validator with:
+```
+jshint scripts
+```
+
+- Always use strict mode
+- Avoid using bitwise operators
+- Always use curly brackets, even for a single line
+- Compare values with `===` and `!==` for type safety
+- Don't extend prototypes of native objects (e.g. `Array` or `Date`)
+- Don't use the comma operator
+- Avoid declaring variables that are already declared in a higher scope
+- Avoid declaring variables and not using them
+
 ## Storing Data
 
 1pr is backed by a Firebase database.  This allows you to save and share data armed with just the knowledge of JSON rather than having to understand structuring a database or sql etc..
@@ -55,8 +134,8 @@ Tab width is not defined in the editorconfig, so each deveveloper can set their 
 To set up a test database and add yourself as administrator:
 
 1. create a Firebase account and project
-1. replace the config details in `database\firebaseconfig.js` with the config details shown in the Firebase console
-1. copy the contents of `Firebaserules.json` into the database rules section of the console
+1. replace the config details in `scripts\database\config.js` with the config details shown in the Firebase console
+1. copy the contents of `scripts\database\firebase-rules.json` into the database rules section of the console
   - (Re-do this every time you pull new changes into your fork that change the rules file)
 1. under the authentication section of the console, enable GitHub authentication (follow the instructions there)
 1. (optionally add your github.io subdomain or other domains where you can access your site as an authorised OAuth redirect domain)
@@ -83,7 +162,7 @@ To develop with the database:
 - Remember to update the rules to allow non-admins to use your feature, though be restrictive rather than permissive
 - Remember to test those rules using the simulator build into the rules interface
 - Record the steps you take modifying the structure and data within the database in a migration:
-  1. Open up `database\migrations.js`
+  1. Open up `scripts\database\migrations.js`
   1. find the end of the `migrations` array
   1. add a new object, following the pattern of the existing migrations, i.e.
      - `name` - unique identifier for the migration
@@ -94,4 +173,3 @@ To develop with the database:
 - Add the class `signed-out` to any elements you want to be visible when the user isn't signed in
 - Add the classes `signed-in` and `hidden` to the elements you want to show when the user is signed in
 - Add the class `signed-in-admin` on top of the regular `signed-in hidden` to the elements you want to show when the user is signed in as an admin
-
