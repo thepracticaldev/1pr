@@ -33,17 +33,7 @@
 				//Still need to return a thenable object
 				return Promise.resolve();
 			}
-		},
-		{
-			name: "Test",
-			description: "Added migration system.  Requires 'admins' node defined in database populated with an array of user ids",
-			doMigration: function(){
-				//Don't need to do anything explicitly.
-				// migrationHistoryRef gets created when the first history item (this one) gets pushed
-				//Still need to return a thenable object
-				return Promise.resolve();
-			}
-		},
+		}
 	];
 
 	var applyMigration = function(migration){
