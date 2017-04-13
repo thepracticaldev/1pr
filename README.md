@@ -172,4 +172,4 @@ To develop with the database:
      - there's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
 - Add the class `signed-out` to any elements you want to be visible when the user isn't signed in
 - Add the classes `signed-in` and `hidden` to the elements you want to show when the user is signed in
-- Add the class `signed-in-admin` on top of the regular `signed-in hidden` to the elements you want to show when the user is signed in as an admin
+- Add the classes `signed-in-admin` and `hidden` on top of the regular `signed-in hidden` to the elements you want to show when the user is signed in as an admin
