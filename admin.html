@@ -29,19 +29,7 @@
 			</a>
 
 			<div class="fill"></div>
-			<span id="nav-signed-out">
-				<a id="button-sign-in" role="button" target="_blank" rel="noopener">
-					<i class="fa fa-sign-in" aria-hidden="true"></i>Sign In
-				</a>
-			</span>
 
-			<span id="nav-signed-in" class="hidden">
-				<a id="button-admin" class="hidden" role="button" href="./admin.html">Manage Web App</a>
-				<span id="span-firebase-user"></span>
-				<a id="button-sign-out" role="button">
-					<i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out
-				</a>
-			</span>
 			<a id="menu-button" onclick="toggleSidebar()" role="button">
 				<i class="fa fa-bars fa-lg" aria-hidden="true"></i>
 			</a>
@@ -50,11 +38,27 @@
 		<div id="main-content">
 			<div id="sidebar" class="closed">
 				<ul>
+					<li class="signed-out">
+						<a id="button-sign-in" role="button" target="_blank" rel="noopener">
+							<i class="fa fa-sign-in" aria-hidden="true"></i>Sign In
+						</a>
+					</li>
+					<li class="signed-in hidden">
+						<span id="span-firebase-user"></span>
+					</li>
+					<li class="signed-in signed-in-admin hidden">
+						<a id="button-admin" role="button" href="./admin.html">Manage Web App</a>
+					</li>
+					<li class="signed-in hidden">
+						<a id="button-sign-out" role="button">
+							<i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out
+						</a>
+					</li>
 					<li>
 						<a href="game.html">Would you like to play a game?</a>
 					</li>
 					<li>
-						<a href="#">Second Page</a>
+						<a href="http://try.github.io" target="_blank">Try Git</a>
 					</li>
 					<li>
 						<a href="#">Third Page</a>
