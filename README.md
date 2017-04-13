@@ -62,7 +62,7 @@ To set up a test database and add yourself as administrator:
 1. (optionally add your github.io subdomain or other domains where you can access your site as an authorised OAuth redirect domain)
 1. serve your files
 1. navigate to your 1pr homepage
-1. click the sign in button in the top right to sign in with GitHub and generate a database account for yourself
+1. click the sign in button in the sidebar to sign in with GitHub and generate a database account for yourself
 1. go to the users panel of the authentication section of the Firebase console and copy the `uid` for your newly-generated account
 1. go to the data panel of the database section and:
    1. add a node named `admins` as a child of the root node
@@ -91,4 +91,7 @@ To develop with the database:
      - `doMigration` - a function that returns a promise (or other thenable object) that enacts the data manipulation to achieve what you want to do
   1. test your migration by using the button on the admin page
      - there's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
+- Add the class `signed-out` to any elements you want to be visible when the user isn't signed in
+- Add the classes `signed-in` and `hidden` to the elements you want to show when the user is signed in
+- Add the class `signed-in-admin` on top of the regular `signed-in hidden` to the elements you want to show when the user is signed in as an admin
 
