@@ -18,8 +18,23 @@ function toggleSidebar(){
 }
 
 function showElement(element){
-	element.classList.remove("hidden");
+	//Removes first instance of hidden in className
+	// so element can be hidden multiple times and still
+	// stay hidden when shown fewer times.
+	hiddenClassName = /\b(hidden)\b/
+	element.className = element.className.replace(hiddenClassName, "");
 }
+
 function hideElement(element){
-	element.classList.add("hidden");
+	//Extend the className rather than use classList so that
+	//element can be hidden multiple times
+	element.className = element.className + " hidden";
+}
+
+function showManyElements(arrayOfElements){
+	arrayOfElements.forEach(el => showElement(el));
+}
+
+function hideManyElements(arrayOfElements){
+	arrayOfElements.forEach(el => hideElement(el));
 }

@@ -213,14 +213,6 @@ nav .fa-lg {
     font-size: 1.7em;
 }
 
-#nav-signed-in > *{
-	display: inline-block;
-	height: 54px;
-	line-height: 54px;
-	padding: 0 18px;
-	color: white;
-}
-
 /* PR listings */
 #pr-container {
 	display: none;
@@ -316,7 +308,8 @@ pr-badge a:focus::after  {
 }
 
 #sidebar li a,
-#sidebar li a:visited {
+#sidebar li a:visited,
+#sidebar span {
     display: block;
     padding: 10px 16px;
     color: #fff;
@@ -387,8 +380,8 @@ pr-badge a:focus::after  {
 
 /*
 	Utility for quickly showing and hiding via javascript
-	!important so it can override existing styles regardless
-	 of specificity
+	Should be last in the document and !important so it can override
+	existing styles regardless of specificity
 */
 .hidden{
 	display:none!important;
