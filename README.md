@@ -19,9 +19,8 @@ View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.githu
 - Create a pull request
 - Hope you get picked
 
-## Coding standards
-
 ## Project structure
+
 The project's structure is pretty simple.
 
 - HTML files go in the root directory
@@ -29,8 +28,8 @@ The project's structure is pretty simple.
 - Javascript goes in the `scripts/` directory
 - Third-party libraries (CSS and JS) go in the `vendor/` directory, which is ignored by the linters (see **Testing** below).
 
-
 ## Coding standards
+
 When contributing, please try to follow the coding standards so we have nice looking code that's easy to follow for everyone.
 
 ### Editorconfig
@@ -58,30 +57,23 @@ Tab width is not defined in the editorconfig, so each deveveloper can set their 
 - Use `let` and `const` where applicable, to keep the scope of your variables specific. Don't know what scope is or what `let` does? Check out [this article](https://medium.com/@MentallyFriendly/es6-an-idiots-guide-to-let-and-const-70be9691c389).
 - Use `lowerCamelCase` for variable names (not `snake_case`)
 
-
-
 ## Testing
+
 The project contains the files `.htmlhintrc`, `.csslintrc` and `.jshintrc` with configuration for the respective testing utilities.
 
 To install the testing utilities locally, simply install [Node.js](https://nodejs.org/en/) and then use npm (bundled with Node.js) to install the utilities:
 
 ```Bash
-# HTML validation
-npm install --global htmlhint
+npm install --global htmlhint csslint jshint
 
-# CSS linter
-npm install --global csslint
-
-# JSHint
-npm install --global jshint
-```
-
-
-#### HTML validation
+### HTML validation
 
 Run the HTML validator with:
+
 ```
+
 htmlhint
+
 ```
 
 - All tags should be lowercase
@@ -94,12 +86,14 @@ htmlhint
 - No scripts in the head (place them at the bottom of the body)
 - No inline style attributes or javascript event handlers (e.g. `onclick=""`)
 
-
-#### CSS validation
+### CSS validation
 
 Run the CSS validator with:
+
 ```
+
 csslint stylesheets
+
 ```
 
 - No empty rules
@@ -112,12 +106,14 @@ csslint stylesheets
 - Don't use regex selectors
 - Encourage the use of shorthand notation
 
-
-#### JS validation
+### JS validation
 
 Run the Javascript validator with:
+
 ```
+
 jshint scripts
+
 ```
 
 - Always use strict mode
