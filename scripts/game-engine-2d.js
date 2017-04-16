@@ -188,7 +188,7 @@ OnePRGame.Engine2D = function (context, gameBoardClassName) {
 
     this.Left = function () {
         // Face left regardless of the ability to move there.
-        that.Context.Player.Direction = 0;
+        that.Context.Player.Direction = Math.PI;
 
         // Where am I going?
         let targetTile = OnePRGame.Tileset[OnePRGame.Map[that.Context.Player.Position[0]][that.Context.Player.Position[1] - 1]];
@@ -209,7 +209,7 @@ OnePRGame.Engine2D = function (context, gameBoardClassName) {
 
     this.Right = function () {
         // Face right regardless of the ability to move there.
-        that.Context.Player.Direction = Math.PI;
+        that.Context.Player.Direction = 0;
 
         // Where am I going?
         let targetTile = OnePRGame.Tileset[OnePRGame.Map[that.Context.Player.Position[0]][that.Context.Player.Position[1] + 1]];
