@@ -80,7 +80,7 @@ OnePRGame.Engine2D = function (context, gameBoardClassName) {
         // Setup controls elements
         let controls2d = document.createElement('div');
         controls2d.className = 'game-board-2d-controls';
-        controls2d.style.position = 'fixed';
+        controls2d.style.position = 'absolute';
         controls2d.style.bottom = '0px';
         controls2d.style.left = '0px';
 

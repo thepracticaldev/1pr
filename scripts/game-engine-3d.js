@@ -92,7 +92,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
         // Setup controls elements
         let controls3d = document.createElement('div');
         controls3d.className = 'game-board-3d-controls';
-        controls3d.style.position = 'fixed';
+        controls3d.style.position = 'absolute';
         controls3d.style.bottom = '0px';
         controls3d.style.left = '0px';
 

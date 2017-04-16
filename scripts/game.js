@@ -165,6 +165,7 @@ OnePRGame.Load = function () {
 
     OnePRGame.Engines[OnePRGame.CurrentEngine].PlayerAction('INITIAL CHECKIN!');
 
+    document.getElementById('loader').style.display = 'none';
 };
 
 (function loadGame() {
