@@ -1,8 +1,6 @@
-// Wrap everything inside a scoped function
-(function loadLastPr() {
+'use strict';
 
-	// Helper function; shorthand for document.getElementById (because that gets pretty annoying if you have to write it a bunch)
-	let el = function(id) { return document.getElementById(id); }
+(function loadLastPr() {
 
 	// Helper function to calculate difference between date and return the date in appropiate format.
 	let getTime = function(merge_date) {
@@ -10,20 +8,23 @@
 		let diff = new Date() - new Date(merge_date);
 
 		let seconds = Math.round(diff/1000);
-		if (seconds < 60)
-			return seconds + " seconds ago";
+		if (seconds < 60) {
+			return seconds + ' seconds ago';
+		}
 
 		let minutes = Math.round(seconds/60);
-		if (minutes < 60)
-			return minutes + " minutes ago";
+		if (minutes < 60) {
+			return minutes + ' minutes ago';
+		}
 
 		let hours = Math.round(minutes/60);
-		if (hours < 24)
-			return hours + " hours ago";
+		if (hours < 24) {
+			return hours + ' hours ago';
+		}
 
 		let days = Math.round(hours/24);
-		return days + " days ago";
-	}
+		return days + ' days ago';
+	};
 
 	// Helper function to limit the maximum number of characters of a string but not break up words
 	let maxLength = function(str, maxLength) {
@@ -34,8 +35,6 @@
 		}
 
 		let words = str.split(' ');
-		let totalLength = 0;
-
 		str = '';
 
 		for(let i = 0; i < words.length; i++){
@@ -52,31 +51,32 @@
 
 		return str;
 
-	}
+	};
 
 
 	// Load last merged PR
-	window.api('https://api.github.com/repos/thepracticaldev/1pr/pulls?state=closed', function(err, pr_list) {
+	let done = window.registerAsyncScript('pr');
+	window.api('https://api.github.com/repos/thepracticaldev/1pr/pulls?state=closed&sort=updated&direction=desc', function(err, pr_list) {
+		done();
 
 		if(err) {
-			console.error(err);
-			el('pr-container').textContent = 'Could not load latest PR';
-			el('pr-container').className = 'error';
+			if(window.console){ window.console.error(err); }
+			document.getElementById('last-pr').textContent = 'Could not load latest PR';
+			document.getElementById('last-pr').className = 'error';
 			return;
 		}
 
 		for(let i = 0; i < pr_list.length; i++) {
 
-			if(pr_list[i].merged_at != null) {
+			if(pr_list[i].merged_at !== null) {
 				let pr = pr_list[i];
 
-				el('pr-last').innerHTML = '<a href="' + pr.html_url + '">' + maxLength(pr.title, 50) + '</a> by <a href="' + pr.user.html_url + '">' + pr.user.login + '</a> merged ' + getTime(pr.merged_at);
+				document.getElementById('last-pr').getElementsByClassName('pr-title')[0].innerHTML = '<a href="' + pr.html_url + '">' + maxLength(pr.title, 32) + '</a> <span>by <a href="' + pr.user.html_url + '">' + pr.user.login + '</a></span> <span>merged ' + getTime(pr.merged_at) + '</span>';
 				break;
 			}
 
 		}
 
-		el('pr-container').style.display = 'block';
 	});
 
 })();
