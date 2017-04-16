@@ -20,6 +20,7 @@ OnePRGame.Player = {
 // Y------------------------------> +X
 /* | */OnePRGame.Map = [
 /* | */    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+/* | */    [0, 0, 0, 0, 0, 0, 0, 9, 0, 0],
 /* | */    [0, 1, 2, 3, 4, 5, 6, 7, 8, 0],
 /* | */    [0, 0, 0, 0, 0, 6, 0, 0, 0, 0],
 /* | */    [0, 0, 0, 0, 0, 7, 0, 0, 0, 0],
@@ -89,7 +90,7 @@ OnePRGame.Tileset = [{
     Id: 8,
     Color: '#FF0',
     Event: function () {
-        OnePRGame.Player.Position = [1, 1];
+        OnePRGame.Player.Position = [2, 1];
         OnePRGame.Player.Direction = 0;
         OnePRGame.Engines[OnePRGame.CurrentEngine].Stop(function () {
             OnePRGame.Engines[OnePRGame.CurrentEngine].Run();
@@ -97,6 +98,15 @@ OnePRGame.Tileset = [{
             document.getElementsByClassName('controls-score')[0].textContent =
                 parseInt(document.getElementsByClassName('controls-score')[0].textContent) + 200;
         });
+    }
+},
+{
+    Id: 9,
+    Color: '#000',
+    Event: function () {
+        OnePRGame.Engines[OnePRGame.CurrentEngine].PlayerAction('EASTER EGG! +1000 POINTS!');
+        document.getElementsByClassName('controls-score')[0].textContent =
+            parseInt(document.getElementsByClassName('controls-score')[0].textContent) + 1000;
     }
 }];
 
@@ -140,7 +150,7 @@ OnePRGame.Load = function () {
     for (let i = 0; i < OnePRGame.Map.length; i++) {
         for (let j = 0; j < OnePRGame.Map[i].length; j++) {
             if (OnePRGame.Tileset[OnePRGame.Map[i][j]].IsStart) {
-                OnePRGame.Player.Position = [j, i];
+                OnePRGame.Player.Position = [i, j];
             }
         }
     }
