@@ -1,4 +1,8 @@
-﻿if (typeof OnePRGame === 'undefined') {
+﻿/*
+
+Example engine interface.
+
+if (typeof OnePRGame === 'undefined') {
     var OnePRGame = {};
 }
 
@@ -27,3 +31,5 @@ OnePRGame.EngineExample = function (context, gameBoardClassName) {
 	// Should probably be named something different. Just using it currently to display text.
     this.PlayerAction = function (text) { };
 };
+
+*/

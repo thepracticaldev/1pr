@@ -1,4 +1,6 @@
-﻿if (typeof OnePRGame === 'undefined') {
+﻿'use strict';
+
+if (typeof OnePRGame === 'undefined') {
     var OnePRGame = {};
 }
 
@@ -104,7 +106,7 @@ OnePRGame.LoadControls = function () {
 
         document.getElementsByClassName('controls-swapengine')[0].addEventListener('click', function () {
 
-            if (OnePRGame.CurrentEngine == 0) {
+            if (OnePRGame.CurrentEngine === 0) {
                 OnePRGame.Engines[OnePRGame.CurrentEngine].Stop(function () {
                     document.getElementsByClassName('game-board-2d')[0].style.display = 'none';
                     document.getElementsByClassName('game-board-3d')[0].style.display = 'block';
@@ -112,7 +114,7 @@ OnePRGame.LoadControls = function () {
                     OnePRGame.Engines[OnePRGame.CurrentEngine].Run();
                 });
             }
-            else if (OnePRGame.CurrentEngine == 1) {
+            else if (OnePRGame.CurrentEngine === 1) {
                 OnePRGame.Engines[OnePRGame.CurrentEngine].Stop(function () {
                     document.getElementsByClassName('game-board-3d')[0].style.display = 'none';
                     document.getElementsByClassName('game-board-2d')[0].style.display = 'block';

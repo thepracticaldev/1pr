@@ -1,4 +1,6 @@
-﻿if (typeof OnePRGame === 'undefined') {
+﻿'use strict';
+
+if (typeof OnePRGame === 'undefined') {
     var OnePRGame = {};
 }
 
@@ -137,7 +139,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
         gameBoard.getElementsByClassName('game-board-3d-controls-right')[0].removeEventListener('click', that.Right, false);
 
         let stopInterval = setInterval(function () {
-            if (that.MoveQueue.length == 0 || that.MoveQueue[0].Status != 'Executing') {
+            if (that.MoveQueue.length === 0 || that.MoveQueue[0].Status !== 'Executing') {
 
                 clearInterval(stopInterval);
 
@@ -149,12 +151,12 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
     };
 
     this.Forward = function () {
-        if (that.MoveQueue.length == 0 || that.MoveQueue[0].Status != 'Executing') {
+        if (that.MoveQueue.length === 0 || that.MoveQueue[0].Status !== 'Executing') {
             that.MoveQueue.push({
                 Status: 'Not Started',
                 Move: function () {
-                    let isX = that.Context.Player.Direction != Math.PI / 2 && that.Context.Player.Direction != Math.PI * 3 / 2;
-                    let isAdd = that.Context.Player.Direction != Math.PI && that.Context.Player.Direction != Math.PI * 3 / 2;
+                    let isX = that.Context.Player.Direction !== Math.PI / 2 && that.Context.Player.Direction !== Math.PI * 3 / 2;
+                    let isAdd = that.Context.Player.Direction !== Math.PI && that.Context.Player.Direction !== Math.PI * 3 / 2;
 
                     let startPosition = parseFloat((that.Context.Player.Position[isX ? 1 : 0] + 0.5));
                     let endPosition = startPosition + (isAdd ? 1 : -1);
@@ -163,7 +165,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
                     let targetTile = OnePRGame.Tileset[OnePRGame.Map[that.Context.Player.Position[0] + (isX ? 0 : isAdd ? 1 : -1)][that.Context.Player.Position[1] + (!isX ? 0 : isAdd ? 1 : -1)]];
 
                     // Can I get there?
-                    if (targetTile != null && !targetTile.Impassable) {
+                    if (targetTile !== null && !targetTile.Impassable) {
 
                         let intervalId = setInterval(function () {
 
@@ -191,7 +193,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
     };
 
     this.Left = function () {
-        if (that.MoveQueue.length == 0 || that.MoveQueue[0].Status != 'Executing') {
+        if (that.MoveQueue.length === 0 || that.MoveQueue[0].Status !== 'Executing') {
             that.MoveQueue.push({
                 Status: 'Not Started',
                 Move: function () {
@@ -219,7 +221,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
     };
 
     this.Right = function () {
-        if (that.MoveQueue.length == 0 || that.MoveQueue[0].Status != 'Executing') {
+        if (that.MoveQueue.length === 0 || that.MoveQueue[0].Status !== 'Executing') {
             that.MoveQueue.push({
                 Status: 'Not Started',
                 Move: function () {
@@ -275,7 +277,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
         let localPlane = {
             Vertices: [],
             Color: plane3d.Color
-        }
+        };
 
         for (let i = 0; i < plane3d.Vertices.length; i++) {
 
@@ -284,7 +286,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
                 plane3d.Vertices[i][0] - (that.Context.Player.Position[1] + 0.5),
                 plane3d.Vertices[i][1] - 0.5,
                 plane3d.Vertices[i][2] - (that.Context.Player.Position[0] + 0.5)
-            ]
+            ];
 
             // Camera direction modification
             vertex = that.RotatePointAroundCameraDirection(vertex);
@@ -304,7 +306,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
         let z3d = point3d[2];
 
         // Projection
-        let x2d = z3d == 0 && x3d > 0 ? that.HalfWidth : z3d == 0 && x3d < 0 ? -that.HalfWidth : (x3d * (that.Camera.XFocalLength / z3d));
+        let x2d = z3d === 0 && x3d > 0 ? that.HalfWidth : z3d === 0 && x3d < 0 ? -that.HalfWidth : (x3d * (that.Camera.XFocalLength / z3d));
 
         if (z3d < 0) {
             // Using this as a surrogate for proper 3D clipping.
@@ -312,7 +314,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
             x2d = -6 * x2d;
         }
 
-        let y2d = z3d == 0 && y3d > 0 ? that.HalfHeight : z3d == 0 && y3d < 0 ? -that.HalfHeight : (y3d * (that.Camera.YFocalLength / z3d));
+        let y2d = z3d === 0 && y3d > 0 ? that.HalfHeight : z3d === 0 && y3d < 0 ? -that.HalfHeight : (y3d * (that.Camera.YFocalLength / z3d));
 
         if (z3d < 0) {
             // Using this as a surrogate for proper 3D clipping.
@@ -334,7 +336,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
 
         for (let i = 0; i < plane2d.Vertices.length; i++) {
 
-            if (i == 0) {
+            if (i === 0) {
                 that.CanvasContext.moveTo.apply(that.CanvasContext, plane2d.Vertices[i]);
             }
             else {
@@ -377,32 +379,32 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
 
         let aX = null, bX = null, aZ = null, bZ = null;
         for (let i = 0; i < a.Vertices.length; i++) {
-            if (aX == null || Math.abs(a.Vertices[i][0]) < aX) {
+            if (aX === null || Math.abs(a.Vertices[i][0]) < aX) {
                 aX = Math.abs(a.Vertices[i][0]);
             }
 
-            if (a.Vertices[i][2] >= 0 && (aZ == null || a.Vertices[i][2] < aZ)) {
+            if (a.Vertices[i][2] >= 0 && (aZ === null || a.Vertices[i][2] < aZ)) {
                 aZ = a.Vertices[i][2];
             }
         }
 
         for (let i = 0; i < b.Vertices.length; i++) {
-            if (bX == null || Math.abs(b.Vertices[i][0]) < bX) {
+            if (bX === null || Math.abs(b.Vertices[i][0]) < bX) {
                 bX = Math.abs(b.Vertices[i][0]);
             }
 
-            if (b.Vertices[i][2] >= 0 && (bZ == null || b.Vertices[i][2] < bZ)) {
+            if (b.Vertices[i][2] >= 0 && (bZ === null || b.Vertices[i][2] < bZ)) {
                 bZ = b.Vertices[i][2];
             }
         }
 
-        return aZ == null && bZ == null ? 0
-            : aZ == null && bZ != null ? 1
-                : aZ != null && bZ == null ? -1
+        return aZ === null && bZ === null ? 0
+            : aZ === null && bZ !== null ? 1
+                : aZ !== null && bZ === null ? -1
                     : aZ < bZ ? 1
-                        : aZ == bZ && aX < bX ? 1
-                            : aZ == bZ && aX > bX ? 1
-                                : aZ == bZ && aX == bX ? 0
+                        : aZ === bZ && aX < bX ? 1
+                            : aZ === bZ && aX > bX ? 1
+                                : aZ === bZ && aX === bX ? 0
                                     : -1;
     };
 
@@ -454,7 +456,7 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
             let plane2d = {
                 Vertices: [],
                 Color: cameraRelative3DPlanes[i].Color
-            }
+            };
 
             // Calculate 2D vertices
             for (let j = 0; j < cameraRelative3DPlanes[i].Vertices.length; j++) {
@@ -480,10 +482,10 @@ OnePRGame.Engine3D = function (context, gameBoardClassName) {
     this.ExecuteMoveQueue = function () {
 
         if (that.MoveQueue.length > 0) {
-            if (that.MoveQueue[0].Status == 'Complete') {
+            if (that.MoveQueue[0].Status === 'Complete') {
                 that.MoveQueue.shift();
             }
-            else if (that.MoveQueue[0].Status == 'Not Started') {
+            else if (that.MoveQueue[0].Status === 'Not Started') {
                 that.MoveQueue[0].Status = 'Executing';
                 that.MoveQueue[0].Move();
             }

@@ -1,4 +1,6 @@
-﻿if (typeof OnePRGame === 'undefined') {
+﻿'use strict';
+
+if (typeof OnePRGame === 'undefined') {
     var OnePRGame = {};
 }
 
@@ -150,7 +152,7 @@ OnePRGame.Engine2D = function (context, gameBoardClassName) {
         let targetTile = OnePRGame.Tileset[OnePRGame.Map[that.Context.Player.Position[0] - 1][that.Context.Player.Position[1]]];
 
         // Can I get there?
-        if (targetTile != null && !targetTile.Impassable) {
+        if (targetTile !== null && !targetTile.Impassable) {
             that.Context.Player.Position[0]--;
             that.UpdatePlayerPosition();
             that.TranslateMap();
@@ -171,7 +173,7 @@ OnePRGame.Engine2D = function (context, gameBoardClassName) {
         let targetTile = OnePRGame.Tileset[OnePRGame.Map[that.Context.Player.Position[0] + 1][that.Context.Player.Position[1]]];
 
         // Can I get there?
-        if (targetTile != null && !targetTile.Impassable) {
+        if (targetTile !== null && !targetTile.Impassable) {
             that.Context.Player.Position[0]++;
             that.UpdatePlayerPosition();
             that.TranslateMap();
@@ -192,7 +194,7 @@ OnePRGame.Engine2D = function (context, gameBoardClassName) {
         let targetTile = OnePRGame.Tileset[OnePRGame.Map[that.Context.Player.Position[0]][that.Context.Player.Position[1] - 1]];
 
         // Can I get there?
-        if (targetTile != null && !targetTile.Impassable) {
+        if (targetTile !== null && !targetTile.Impassable) {
             that.Context.Player.Position[1]--;
             that.UpdatePlayerPosition();
             that.TranslateMap();
@@ -213,7 +215,7 @@ OnePRGame.Engine2D = function (context, gameBoardClassName) {
         let targetTile = OnePRGame.Tileset[OnePRGame.Map[that.Context.Player.Position[0]][that.Context.Player.Position[1] + 1]];
 
         // Can I get there?
-        if (targetTile != null && !targetTile.Impassable) {
+        if (targetTile !== null && !targetTile.Impassable) {
             that.Context.Player.Position[1]++;
             that.UpdatePlayerPosition();
             that.TranslateMap();

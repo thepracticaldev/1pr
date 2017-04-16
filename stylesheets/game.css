@@ -1,24 +1,4 @@
-﻿@keyframes fadein {
-	0% {
-		opacity: 0;
-		margin-top: 40px;
-	}
-
-	25% {
-		opacity: 1;
-	}
-
-	75% {
-		opacity: 1;
-		margin-top: 0px;
-	}
-
-	100% {
-		opacity: 0;
-	}
-}
-
-body {
+﻿body {
     background: #000;
     margin: 0;
 	text-align: center;
@@ -110,4 +90,24 @@ body {
 	opacity: 0;
 	text-shadow: 3px 3px 2px rgba(0,0,0,0.8), -3px 3px 2px rgba(0,0,0,0.8), 3px -3px 2px rgba(0,0,0,0.8), -3px -3px 2px rgba(0,0,0,0.8);
 	line-height: normal;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+		margin-top: 40px;
+	}
+
+	25% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
