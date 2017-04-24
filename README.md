@@ -168,31 +168,31 @@ To develop with the database:
 - Remember to update the rules to allow non-admins to use your feature, though be restrictive rather than permissive
 - Remember to test those rules using the simulator build into the rules interface
 - Record the steps you take modifying the structure and data within the database in a migration:
-  1. Open up `scripts\database\migrations.js`
-  1. Find the end of the `migrations` array
-  1. Add a new object, following the pattern of the existing migrations, i.e.
+   1. Open up `scripts\database\migrations.js`
+   1. Find the end of the `migrations` array
+   1. Add a new object, following the pattern of the existing migrations, i.e.
 
-     ```
+      ```
 
-     {
-         //unique identifier for the migration
-                name: "doNothing",
+      {
+          //unique identifier for the migration
+                 name: "doNothing",
 
-         //talk about what your changes do
-         description: "Does nothing of substance. Does add to the migration history.",
+          //talk about what your changes do
+          description: "Does nothing of substance. Does add to the migration history.",
 
-         //function that returns a promise
-         // (or other thenable object) that
-         // enacts the data manipulation to
-         // achieve what you want to do
-         doMigration: function(){return Promise.Resolve();}
-     }
+          //function that returns a promise
+          // (or other thenable object) that
+          // enacts the data manipulation to
+          // achieve what you want to do
+          doMigration: function(){return Promise.Resolve();}
+      }
 
-     ```
+      ```
 
-  1. Test your migration by using the button on the admin page
+   1. Test your migration by using the button on the admin page
 
-     There's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
+      There's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
 
 - Add the class `signed-out` to any elements you want to be visible when the user isn't signed in
 - Add the classes `signed-in` and `hidden` to the elements you want to show when the user is signed in
