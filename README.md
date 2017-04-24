@@ -137,7 +137,9 @@ To set up a test database and add yourself as administrator:
 1. create a Firebase account and project
 1. replace the config details in `scripts\database\config.js` with the config details shown in the Firebase console
 1. copy the contents of `scripts\database\firebase-rules.json` into the database rules section of the console
-   - (Re-do this every time you pull new changes into your fork that change the rules file)
+
+   (Re-do this every time you pull new changes into your fork that change the rules file)
+
 1. under the authentication section of the console, enable GitHub authentication (follow the instructions there)
 1. (optionally add your github.io subdomain or other domains where you can access your site as an authorised OAuth redirect domain)
 1. serve your files
@@ -152,13 +154,16 @@ To set up a test database and add yourself as administrator:
 1. go back to your 1pr page and refresh.
 1. click the newly-visible Manage Web App link
 1. Click run migrations to apply all database changes to your Firebase database
-   - (Re-run this every time you pull new changes into your fork that change the database)
+
+   (Re-run this every time you pull new changes into your fork that change the database)
 
 To develop with the database:
 
 - Use the documentation to find out how to save and load data
 - By default the rules only allow administrators to edit the database, so make sure you've given yourself that role
-  - This is important -  Firebase allows connections from localhost so (given the connection details are public) anyone could serve their own script that reads and writes to the database maliciously
+
+  This is important -  Firebase allows connections from localhost so (given the connection details are public) anyone could serve their own script that reads and writes to the database maliciously
+
 - Make a new top-level node for each feature (unless it particularly makes sense not to)
 - Remember to update the rules to allow non-admins to use your feature, though be restrictive rather than permissive
 - Remember to test those rules using the simulator build into the rules interface
