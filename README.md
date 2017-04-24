@@ -63,8 +63,11 @@ The project contains the files `.htmlhintrc`, `.csslintrc` and `.jshintrc` with 
 
 To install the testing utilities locally, simply install [Node.js](https://nodejs.org/en/) and then use npm (bundled with Node.js) to install the utilities:
 
-```Bash
+```
+
 npm install --global htmlhint csslint jshint
+
+```
 
 ### HTML validation
 
@@ -134,7 +137,7 @@ To set up a test database and add yourself as administrator:
 1. create a Firebase account and project
 1. replace the config details in `scripts\database\config.js` with the config details shown in the Firebase console
 1. copy the contents of `scripts\database\firebase-rules.json` into the database rules section of the console
-  - (Re-do this every time you pull new changes into your fork that change the rules file)
+   - (Re-do this every time you pull new changes into your fork that change the rules file)
 1. under the authentication section of the console, enable GitHub authentication (follow the instructions there)
 1. (optionally add your github.io subdomain or other domains where you can access your site as an authorised OAuth redirect domain)
 1. serve your files
@@ -149,7 +152,7 @@ To set up a test database and add yourself as administrator:
 1. go back to your 1pr page and refresh.
 1. click the newly-visible Manage Web App link
 1. Click run migrations to apply all database changes to your Firebase database
-  - (Re-run this every time you pull new changes into your fork that change the database)
+   - (Re-run this every time you pull new changes into your fork that change the database)
 
 To develop with the database:
 
