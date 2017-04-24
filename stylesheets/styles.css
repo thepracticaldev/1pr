@@ -170,23 +170,37 @@ header .logo path {
 	fill: white;
 }
 
-#sidebar nav {
+#sidebar nav,
+#sidebar .info {
 	width: 90%;
 	margin: auto;
 	margin-top: 72px;
 	margin-bottom: 24px;
 
+}
+
+#sidebar nav{
 	border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-#sidebar nav a {
+
+#sidebar .info{
+	padding-left:0px;
+    -webkit-padding-start: 0px;
+}
+
+#sidebar nav a,
+#sidebar .info li{
 	display: block;
 	padding: 12px;
-
 	color: rgba(255, 255, 255, 0.6);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
 	text-align: center;
 }
+
+#sidebar nav a{
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
 #sidebar nav a:hover, #sidebar nav a:focus {
 	color: white;
 }
@@ -218,7 +232,6 @@ header .logo path {
 }
 
 
-
 /* PR counter */
 #pr-counter {
 	position: relative;
@@ -232,6 +245,10 @@ header .logo path {
 	margin: auto;
 	margin-bottom: 50px;
 	padding-bottom: 20px;
+}
+
+#pr-counter h1 {
+	text-align: center;
 }
 
 #loader {
@@ -266,9 +283,6 @@ body.loaded #pr-counter .info {
 	text-align: center;
 }
 
-
-
-
 /* Last PR */
 #last-pr {
 	opacity: 0;
@@ -299,9 +313,6 @@ body.loaded #last-pr {
 #last-pr span {
 	white-space: nowrap;
 }
-
-
-
 
 /* Intro */
 #intro {
@@ -490,8 +501,18 @@ body.loaded #games {
 	color: #333;
 }
 
+#migration-container>div>div{
+	margin-bottom: 25px;
+}
 
+#migration-container div span{
+	margin: 10px;
+	display: block;
+}
 
+#migration-container div span:first-child{
+	font-weight: bold;
+}
 
 /* It is recommended to always work mobile-first (i.e. design the base css for mobile), and use 'min-width' media queries to adapt the display for larger monitors */
 @media all and (min-width: 480px) {
@@ -523,6 +544,11 @@ body.loaded #games {
 		margin: 5px;
 	}
 
+
+	#migration-container div span:not(:last-child){
+		display: inline;
+	}
+
 }
 
 @media all and (min-width: 720px) {
@@ -541,3 +567,19 @@ body.loaded #games {
 	}
 
 }
+
+/*
+	Utility for quickly showing and hiding via javascript
+	Last in the document and !important so it can override
+	existing styles regardless of specificity
+*/
+.hidden{
+	/*
+		Temporarily allow !important because this is a valid
+	 	use case (unless someone can suggest a better approach)
+	*/
+	/* csslint ignore:start */
+	display:none!important;
+	/* csslint ignore:end */
+}
+

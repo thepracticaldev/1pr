@@ -42,7 +42,7 @@ The editorconfig file should set your editor to the following settings automatic
 - Unix-style line breaks
 - End file with a new line
 - No trailing whitespace before a line break
-- Use tabs for indentation
+- Use tabs for indentation, apart from in Markdown files where spaces are preferred
 
 Tab width is not defined in the editorconfig, so each deveveloper can set their editor's tab width to what they're most comfortable with.
 
@@ -63,8 +63,11 @@ The project contains the files `.htmlhintrc`, `.csslintrc` and `.jshintrc` with 
 
 To install the testing utilities locally, simply install [Node.js](https://nodejs.org/en/) and then use npm (bundled with Node.js) to install the utilities:
 
-```Bash
+```
+
 npm install --global htmlhint csslint jshint
+
+```
 
 ### HTML validation
 
@@ -124,3 +127,73 @@ jshint scripts
 - Don't use the comma operator
 - Avoid declaring variables that are already declared in a higher scope
 - Avoid declaring variables and not using them
+
+## Storing Data
+
+1pr is backed by a Firebase database.  This allows you to save and share data armed with just the knowledge of JSON rather than having to understand structuring a database or sql etc..
+
+To set up a test database and add yourself as administrator:
+
+1. create a Firebase account and project
+1. replace the config details in `scripts\database\config.js` with the config details shown in the Firebase console
+1. copy the contents of `scripts\database\firebase-rules.json` into the database rules section of the console
+
+   (Re-do this every time you pull new changes into your fork that change the rules file)
+
+1. under the authentication section of the console, enable GitHub authentication (follow the instructions there)
+1. (optionally add your github.io subdomain or other domains where you can access your site as an authorised OAuth redirect domain)
+1. serve your files
+1. navigate to your 1pr homepage
+1. click the sign in button in the sidebar to sign in with GitHub and generate a database account for yourself
+1. go to the users panel of the authentication section of the Firebase console and copy the `uid` for your newly-generated account
+1. go to the data panel of the database section and:
+   1. add a node named `admins` as a child of the root node
+   1. click the plus to add a sub-node
+   1. copy your `uid` into the name of that sub-node and add a value of true
+   1. click add to save the changes
+1. go back to your 1pr page and refresh.
+1. click the newly-visible Manage Web App link
+1. Click run migrations to apply all database changes to your Firebase database
+
+   (Re-run this every time you pull new changes into your fork that change the database)
+
+To develop with the database:
+
+- Use the documentation to find out how to save and load data
+- By default the rules only allow administrators to edit the database, so make sure you've given yourself that role
+
+  This is important -  Firebase allows connections from localhost so (given the connection details are public) anyone could serve their own script that reads and writes to the database maliciously
+
+- Make a new top-level node for each feature (unless it particularly makes sense not to)
+- Remember to update the rules to allow non-admins to use your feature, though be restrictive rather than permissive
+- Remember to test those rules using the simulator build into the rules interface
+- Record the steps you take modifying the structure and data within the database in a migration:
+   1. Open up `scripts\database\migrations.js`
+   1. Find the end of the `migrations` array
+   1. Add a new object, following the pattern of the existing migrations, i.e.
+
+      ```
+
+      {
+          //unique identifier for the migration
+                 name: "doNothing",
+
+          //talk about what your changes do
+          description: "Does nothing of substance. Does add to the migration history.",
+
+          //function that returns a promise
+          // (or other thenable object) that
+          // enacts the data manipulation to
+          // achieve what you want to do
+          doMigration: function(){return Promise.Resolve();}
+      }
+
+      ```
+
+   1. Test your migration by using the button on the admin page
+
+      There's no mechanism to roll back migrations yet, so testing multiple times requires deleting all but the `admins` node from the database and rerunning all migrations again
+
+- Add the class `signed-out` to any elements you want to be visible when the user isn't signed in
+- Add the classes `signed-in` and `hidden` to the elements you want to show when the user is signed in
+- Add the classes `signed-in-admin` and `hidden` on top of the regular `signed-in hidden` to the elements you want to show when the user is signed in as an admin
