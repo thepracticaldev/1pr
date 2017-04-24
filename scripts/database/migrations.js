@@ -49,37 +49,37 @@
 		});
 	};
 
-	var populateMigrationList = function(listElement, migrations){
+	var populateMigrationList = function(containerElement, migrations){
 		var migration = {};
-		var li = null;
+		var row = null;
 		var nameSpan = null;
 		var descriptionSpan = null;
 		var timestampSpan = null;
-		listElement.innerHTML = "";
+		containerElement.innerHTML = "";
 
 		if (migrations.length === 0){
-			li = document.createElement("li");
+			row = document.createElement("div");
 			descriptionSpan = document.createElement("span");
 			descriptionSpan.appendChild(document.createTextNode("No Migrations"));
-			li.appendChild(descriptionSpan);
-			listElement.appendChild(li);
+			row.appendChild(descriptionSpan);
+			containerElement.appendChild(row);
 		}
 		else{
 			for (var i = 0; i < migrations.length ; i++){
 				migration = migrations[i];
-				li = document.createElement("li");
+				row = document.createElement("div");
 				nameSpan = document.createElement("span");
 				nameSpan.appendChild(document.createTextNode(migration.name));
-				li.appendChild(nameSpan);
+				row.appendChild(nameSpan);
 				if(migration.timestamp !== undefined){
 					timestampSpan = document.createElement("span");
 					timestampSpan.appendChild(document.createTextNode(migration.timestamp));
-					li.appendChild(timestampSpan);
+					row.appendChild(timestampSpan);
 				}
 				descriptionSpan = document.createElement("span");
 				descriptionSpan.appendChild(document.createTextNode(migration.description));
-				li.appendChild(descriptionSpan);
-				listElement.appendChild(li);
+				row.appendChild(descriptionSpan);
+				containerElement.appendChild(row);
 			}
 		}
 	};

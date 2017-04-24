@@ -501,21 +501,16 @@ body.loaded #games {
 	color: #333;
 }
 
-#migration-container ul{
-	padding-left: 0px;
-}
-
-#migration-container li{
-	list-style: none;
+#migration-container>div>div{
 	margin-bottom: 25px;
 }
 
-#migration-container ul span{
+#migration-container div span{
 	margin: 10px;
 	display: block;
 }
 
-#migration-container ul span:first-child{
+#migration-container div span:first-child{
 	font-weight: bold;
 }
 
@@ -550,7 +545,7 @@ body.loaded #games {
 	}
 
 
-	#migration-container ul span:not(:last-child){
+	#migration-container div span:not(:last-child){
 		display: inline;
 	}
 
