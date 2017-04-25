@@ -4,7 +4,7 @@ I will be accepting up to one pull request per day on this project.
 
 View the result at [thepracticaldev.github.io/1pr](https://thepracticaldev.github.io/1pr/).
 
-[![Build Status](https://travis-ci.org/thepracticaldev/1pr.svg?branch=master)](https://travis-ci.org/thepracticaldev/1pr) [![Gitter](https://badges.gitter.im/thepracticaldev/1pr.svg)](https://gitter.im/thepracticaldev/1pr?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
+[![Build Status](https://travis-ci.org/thepracticaldev/1pr.svg?branch=master)](https://travis-ci.org/thepracticaldev/1pr) [![Gitter](https://badges.gitter.im/dev-1pr/1pr.svg)](https://gitter.im/dev-1pr/1pr?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 
 ## Project Journal
 
