@@ -1,9 +1,11 @@
+'use strict';
+
 /* Shared API "get" function
    window.api(requestUrl, callback)
    requestUrl: The URL that you want to request
    callback:   A function that takes two parameters: (err, responseData)
-               `err` will be a JS error, or a number in case of a non-200 response code
-               If err is null, `responseData` will contain the parsed JSON response
+			   `err` will be a JS error, or a number in case of a non-200 response code
+			   If err is null, `responseData` will contain the parsed JSON response
    */
 (function defineAPI() {
 
@@ -45,7 +47,7 @@
 			// If we've made it this far, the request was successful and we can just pass the response data to the callback
 			callback(null, responseData);
 
-		}
+		};
 
 		// Send the request
 		request.open('GET', requestUrl, true);
@@ -53,6 +55,6 @@
 
 		// If you hit the API rate limit, add the following before sending the request (add in your own username and api token)
 		// request.setRequestHeader('Authorization', 'Basic ' + btoa('username:personal api token'));
-	}
+	};
 
 })();
